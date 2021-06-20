@@ -56,7 +56,7 @@ const HomeScreen = ({ match }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/abbulance`}>
+          <Link to={`/service/ambulance`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://static.vecteezy.com/system/resources/previews/000/421/996/original/vector-ambulance-icon.jpg" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Ambulance</Card.Title>
@@ -116,7 +116,7 @@ const HomeScreen = ({ match }) => {
              
           </Link>
         </Col>
-        {/* <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
+        <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/photographer`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://www.pngitem.com/pimgs/m/44-444474_photography-kid-photographer-clipart-2-image-cartoon-character.png" />
@@ -124,8 +124,8 @@ const HomeScreen = ({ match }) => {
             </Card>
              
           </Link>
-        </Col> */}
-        <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
+        </Col>
+        {/* <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/Cinematographer`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfIa3MNnqcMUqs_icaAvXcM51pOFsIXFq7BA&usqp=CAU" />
@@ -133,7 +133,7 @@ const HomeScreen = ({ match }) => {
             </Card>
              
           </Link>
-        </Col>
+        </Col> */}
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/plumber`}>
           <Card style={{ width: '130px' }}>
