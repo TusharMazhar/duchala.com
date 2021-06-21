@@ -30,7 +30,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/service', serviceRoutes)
-app.use('/api/registration', registrationRoutes)
+app.use('/api/service/registration', registrationRoutes)
 
 
 app.get('/api/config/paypal', (req, res) =>

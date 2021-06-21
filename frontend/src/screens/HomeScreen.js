@@ -181,7 +181,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
       </Row>
         <div style={{textAlign:'center'}}>
-          <Link to={`/service/registration`} style={{textAlign:'center'}}><Button style={{backgroundColor:'#0B8A55',color:'white'}}>Service Registration</Button>  </Link>
+          <Link to={`/service/registration`} style={{textAlign:'center'}}><Button style={{backgroundColor:'#0B8A55',color:'white'}}>Workers Registration Form</Button>  </Link>
         </div>
       </div>
 
