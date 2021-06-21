@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card} from 'react-bootstrap'
+import { Row, Col, Card,Button} from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -11,6 +11,7 @@ import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 
 const HomeScreen = ({ match }) => {
+  const [category, setCategory] = useState('punjabi')
   const keyword = match.params.keyword
 
   const pageNumber = match.params.pageNumber || 1
@@ -23,6 +24,14 @@ const HomeScreen = ({ match }) => {
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
   }, [dispatch, keyword, pageNumber])
+
+  useEffect(() => {
+    console.log(category)
+  }, [category])
+
+  const handleCategory=(name)=>{
+    setCategory(name)
+  }
 
   return (
     <> 
@@ -183,23 +192,26 @@ const HomeScreen = ({ match }) => {
  
       </Row>
       </div>
-
       
-      <Meta />
-      {/* {!keyword ? (
-        <ProductCarousel />
-      ) : (
-        <Link to='/' className='btn btn-light'>
-          Go Back
-        </Link>
-      )} */}
-      {/* <h2 style={{marginTop:'10px'}}>Grocery All Products</h2> */}
+      <div style={{textAlign:'center',marginBottom:'10px'}}>
+        <Row>
+          <Col style={{padding:'10px',backgroundColor:'#0B8A55',color:'white',cursor:'pointer',fontWeight:'bold'}} onClick={()=>handleCategory('Punjabi')}>Punjabi</Col>
+          <Col style={{padding:'10px',backgroundColor:'red',color:'white',cursor:'pointer',fontWeight:'bold'}} onClick={()=>handleCategory('Grocery')}>Grocery</Col>
+          <Col style={{padding:'10px',backgroundColor:'#0B8A55',color:'white',cursor:'pointer',fontWeight:'bold'}} onClick={()=>handleCategory('Boutique')}>Boutique</Col>
+        </Row>
       
-      <div style={{textAlign:'center'}}>
-        <h5 style={{color:'#0B8A55',fontWeight:'bold'}}>Grocery Products</h5>
-        {/* <span style={{color:'red',fontWeight:'bold'}}>Minimum order 500 Taka </span>
-        <span style={{color:'green',fontWeight:'bold'}}>(Delivery Charge Free)</span> */}
       </div>
+      
+      <Meta /> 
+      
+
+      <div style={{textAlign:'center'}}>
+        <h5 style={{color:'#0B8A55',fontWeight:'bold'}}>
+            {category} Products
+        </h5>
+      </div>
+      
+ 
       {loading ? (
         <Loader />
       ) : error ? (
@@ -208,9 +220,10 @@ const HomeScreen = ({ match }) => {
         <>
           <Row>
             {products.map((product) => (
+              product.category===category?
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
-              </Col>
+              </Col>:''
             ))}
           </Row>
           <Paginate

@@ -9,7 +9,6 @@ import { register } from '../actions/userActions'
 
 const RegisterScreen = ({ location, history }) => {
   const [referBonus, setBonus] = useState(Number)
-  const [admin, setAdmin] = useState(true)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -35,6 +34,7 @@ const RegisterScreen = ({ location, history }) => {
       setMessage('Passwords do not match')
     } else {
       const referActive = true
+      const admin = true
       const referId = name.substr(0,5) + Math.floor(Math.random() * 10000000)
       if(email.toString()==='01787373498' || email.toString()==='01746730986' ){
         dispatch(register(name, email, password,admin,referId,referActive))
