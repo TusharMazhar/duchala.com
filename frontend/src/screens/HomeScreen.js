@@ -10,8 +10,8 @@ import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 
-const HomeScreen = ({ match }) => {
-  const [category, setCategory] = useState('punjabi')
+const HomeScreen = ({ match,history }) => {
+  const [category, setCategory] = useState('grocery')
   const keyword = match.params.keyword
 
   const pageNumber = match.params.pageNumber || 1
@@ -26,7 +26,7 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword, pageNumber])
 
   useEffect(() => {
-    console.log(category)
+    history.push(`/search/${category}`)
   }, [category])
 
   const handleCategory=(name)=>{
@@ -220,10 +220,10 @@ const HomeScreen = ({ match }) => {
         <>
           <Row>
             {products.map((product) => (
-              product.category===category?
+              
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
-              </Col>:''
+              </Col>
             ))}
           </Row>
           <Paginate
