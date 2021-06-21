@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const ServiceRegisterScreen = () => {
     let history = useHistory()
     const [name,setName] = useState('')
-    const [phone,setPhone] = useState(Number)
+    const [phone,setPhone] = useState('')
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
 
@@ -69,7 +69,7 @@ const submitHandler = async (e) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
+        <Button type='submit' variant='primary' disabled={(name==='') || (phone==='') || (location==='') || (description==='')}>
           Register
         </Button>
       </Form>
