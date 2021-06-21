@@ -32,9 +32,9 @@ const Product = ({ product }) => {
           </Button>
         </Link>
         </div>
-      </Card.Body>
-      
+      </Card.Body>   
     </Card>
+
   )
 }
 
