@@ -34,8 +34,6 @@ app.use('/api/upload', uploadRoutes)
 app.use('/api/service/order', serviceRoutes)
 app.use('/api/service/registration', registrationRoutes)
 
-
-
 app.get('/api/config/paypal', (req, res) =>
   res.send(process.env.PAYPAL_CLIENT_ID)
 )
