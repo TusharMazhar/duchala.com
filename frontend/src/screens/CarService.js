@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { Form, Button} from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
@@ -11,11 +11,6 @@ const CarService = () => {
     const category = 'Car'
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
-  
-  useEffect(() => {
-    console.log('category',category)
-   
-  }, [category])
 
   const submitHandler = async (e) => {
 

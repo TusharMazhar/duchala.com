@@ -8,7 +8,7 @@ import FormContainer from '../components/FormContainer'
 import { register } from '../actions/userActions'
 
 const RegisterScreen = ({ location, history }) => {
-  const [referBonus, setBonus] = useState(Number)
+  // const [referBonus, setBonus] = useState('')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

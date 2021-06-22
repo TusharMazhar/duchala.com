@@ -14,8 +14,8 @@ const PaymentScreen = ({ history }) => {
     history.push('/shipping')
   }
 
-  const [paymentMethod, setPaymentMethod] = useState('Cash On Delivery')
-
+  // const [paymentMethod, setPaymentMethod] = useState('Cash On Delivery')
+  const paymentMethod = 'Cash On Delivery'
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
