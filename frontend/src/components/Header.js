@@ -23,7 +23,7 @@ const Header = () => {
           <LinkContainer to='/' style={{color:'white',fontSize:'30px',fontWeight:'bold',fontFamily:'cursive'}}>
             <Navbar.Brand >দোচালা.কম</Navbar.Brand>
           </LinkContainer>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Toggle aria-controls='basic-navbar-nav' style={{backgroundColor:'#0B8A55'}} />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route  render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto'>   
