@@ -5,11 +5,12 @@ const serviceNeed = (req,res)=>{
     const service = new Service({
         name: req.body.name,
         phone: req.body.phone,
+        category: req.body.category,
         location: req.body.location,
         description: req.body.description
     })
     service.save()
-    .then((data)=>res.json(data))
+    .then((data)=>res.json({"succcess":"true"}))
     .catch((err)=>res.json(err))
 } 
 

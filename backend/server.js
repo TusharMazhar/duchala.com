@@ -13,6 +13,8 @@ import uploadRoutes from './routes/uploadRoutes.js'
 import serviceRoutes from './routes/serviceRoutes.js'
 import registrationRoutes from './routes/registrationRoutes.js'
 
+
+
 dotenv.config()
 
 connectDB()
@@ -29,8 +31,9 @@ app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
-app.use('/api/service', serviceRoutes)
+app.use('/api/service/order', serviceRoutes)
 app.use('/api/service/registration', registrationRoutes)
+
 
 
 app.get('/api/config/paypal', (req, res) =>

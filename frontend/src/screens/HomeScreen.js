@@ -41,7 +41,7 @@ const HomeScreen = ({ match,history }) => {
       <div style={{marginBottom:'20px',marginLeft:'14px',paddingRight:'0px',paddingLeft:'0px'}}>
       <Row>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/doctor`}>
+          <Link to={`/service/doctor/order`}>
             <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://tse4.mm.bing.net/th?id=OIP.gSaeh0JDdD1Gze_qGGPbggHaId&pid=Api&P=0&w=300&h=300" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Doctor</Card.Title>
@@ -49,7 +49,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/medicine`}>
+          <Link to={`/service/medicine/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://static.vecteezy.com/system/resources/previews/000/637/912/original/medicine-icon-symbol-sign-vector.jpg" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Medicine</Card.Title>
@@ -57,7 +57,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/car`}>
+          <Link to={`/service/car/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://superawesomevectors.com/wp-content/uploads/2015/11/black-simple-car-icon.jpg" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Car</Card.Title>
@@ -65,7 +65,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/ambulance`}>
+          <Link to={`/service/ambulance/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://static.vecteezy.com/system/resources/previews/000/421/996/original/vector-ambulance-icon.jpg" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Ambulance</Card.Title>
@@ -73,7 +73,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/electrician`}>
+          <Link to={`/service/electrician/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://cdn2.iconfinder.com/data/icons/professionals-flat-colorful/614/1584_-_Electrician-512.png" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Electrician</Card.Title>
@@ -81,7 +81,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/designer`}>
+          <Link to={`/service/designer/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://www.latsonprint.com/wp-content/uploads/2014/07/logo-design.png" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Designer</Card.Title>
@@ -90,7 +90,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/cng`}>
+          <Link to={`/service/cng/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://cdn.dribbble.com/users/695124/screenshots/3754806/20.png?compress=1&resize=400x300" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>CNG</Card.Title>
@@ -99,7 +99,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/technician`}>
+          <Link to={`/service/technician/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://w7.pngwing.com/pngs/569/608/png-transparent-computer-icons-technician-technical-support-web-text-computer-area.png" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Technician</Card.Title>
@@ -108,7 +108,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/van`}>
+          <Link to={`/service/van/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2RthEElvw7il0HyNbLkRH1kZrUKYm-Z9RUg&usqp=CAU" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Van</Card.Title>
@@ -117,7 +117,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/flat`}>
+          <Link to={`/service/flat/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd18WunavsmUYZgmuDnDbPgKGyEfD2gDZsXg&usqp=CAU" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Flat Rent</Card.Title>
@@ -126,7 +126,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/photographer`}>
+          <Link to={`/service/photographer/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://www.pngitem.com/pimgs/m/44-444474_photography-kid-photographer-clipart-2-image-cartoon-character.png" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Photographer</Card.Title>
@@ -135,7 +135,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/boosting`}>
+          <Link to={`/service/boosting/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://www.pngitem.com/pimgs/m/530-5308558_rocket-performance-booster-hd-png-download.png" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Boosting</Card.Title>
@@ -144,7 +144,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/plumber`}>
+          <Link to={`/service/plumber/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://www.clipartkey.com/mpngs/m/73-737810_banner-royalty-free-stock-ghiza-plumbing-plumber-icon.png" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Plumber</Card.Title>
@@ -153,7 +153,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/teacher`}>
+          <Link to={`/service/teacher/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://png.pngtree.com/element_our/png_detail/20181208/teaching-icon-png_265271.jpg" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Teacher</Card.Title>
@@ -162,7 +162,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/repairer`}>
+          <Link to={`/service/repairer/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvy07ayE_A7GhtcLOqTNg7ieiJYkD-fk8cNrZ7UlqTMba48Mifn-JcTNEDkqEtOkieWjw&usqp=CAU" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Repairer</Card.Title>
@@ -171,7 +171,7 @@ const HomeScreen = ({ match,history }) => {
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Link to={`/service/repairer`}>
+          <Link to={`/service/tiles/order`}>
           <Card style={{ width: '130px' }}>
               <Card.Img variant="top" width={10} height={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCU99HOlUVLTsOpuZ4mFDi0_9d8aUzkm-lAA&usqp=CAU" />
               <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Tiles Mechanic</Card.Title>
@@ -181,7 +181,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
       </Row>
         <div style={{textAlign:'center'}}>
-          <Link to={`/service/registration`} style={{textAlign:'center'}}><Button style={{backgroundColor:'#0B8A55',color:'white'}}>Workers Registration Form</Button>  </Link>
+          <Link to={`/workers/registration`} style={{textAlign:'center'}}><Button style={{backgroundColor:'#0B8A55',color:'white'}}>Workers Registration Form</Button>  </Link>
         </div>
       </div>
 
@@ -198,11 +198,11 @@ const HomeScreen = ({ match,history }) => {
       <Meta /> 
       
 
-      <div style={{textAlign:'center'}}>
+      {/* <div style={{textAlign:'center'}}>
         <h5 style={{color:'#0B8A55',fontWeight:'bold'}}>
             {category} Products
         </h5>
-      </div>
+      </div> */}
       
  
       {loading ? (

@@ -8,6 +8,9 @@ const serviceSchema = mongoose.Schema(
     phone: {
         type: Number,
     },
+    category:{
+        type: String,
+    },
     location: {
         type: String,
     },
