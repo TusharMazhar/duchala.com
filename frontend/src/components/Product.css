@@ -1,0 +1,8 @@
+.product:hover{
+    background-color: #0B8A55;
+}
+.product{
+    border:1px solid #0B8A55;
+    background-color: white;
+    color:#0B8A55
+}

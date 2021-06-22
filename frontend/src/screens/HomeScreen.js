@@ -9,6 +9,7 @@ import Paginate from '../components/Paginate'
 // import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
+import "./Box.css"
 
 const HomeScreen = ({ match,history }) => {
   const [category, setCategory] = useState('')
@@ -44,42 +45,42 @@ const HomeScreen = ({ match,history }) => {
       <Row>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/doctor/order`}>
-            <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+            <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://tse4.mm.bing.net/th?id=OIP.gSaeh0JDdD1Gze_qGGPbggHaId&pid=Api&P=0&w=300&h=300" />
             </Card>
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/medicine/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://static.vecteezy.com/system/resources/previews/000/637/912/original/medicine-icon-symbol-sign-vector.jpg" />
             </Card>
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/car/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://superawesomevectors.com/wp-content/uploads/2015/11/black-simple-car-icon.jpg" />
             </Card>
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/ambulance/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://static.vecteezy.com/system/resources/previews/000/421/996/original/vector-ambulance-icon.jpg" /> 
             </Card>
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/electrician/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://cdn2.iconfinder.com/data/icons/professionals-flat-colorful/614/1584_-_Electrician-512.png" />
             </Card>
           </Link>
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/designer/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://www.latsonprint.com/wp-content/uploads/2014/07/logo-design.png" />
             </Card>
              
@@ -87,7 +88,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/cng/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://cdn.dribbble.com/users/695124/screenshots/3754806/20.png?compress=1&resize=400x300" />
             </Card>
              
@@ -95,7 +96,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/technician/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://w7.pngwing.com/pngs/569/608/png-transparent-computer-icons-technician-technical-support-web-text-computer-area.png" />
             </Card>
              
@@ -103,7 +104,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/van/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2RthEElvw7il0HyNbLkRH1kZrUKYm-Z9RUg&usqp=CAU" />
             </Card>
              
@@ -111,7 +112,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/flat/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd18WunavsmUYZgmuDnDbPgKGyEfD2gDZsXg&usqp=CAU" />
             </Card>
              
@@ -119,7 +120,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/photographer/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://www.pngitem.com/pimgs/m/44-444474_photography-kid-photographer-clipart-2-image-cartoon-character.png" />
             </Card>
              
@@ -127,7 +128,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/boosting/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://www.pngitem.com/pimgs/m/530-5308558_rocket-performance-booster-hd-png-download.png" />
             </Card>
              
@@ -135,7 +136,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/plumber/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://www.clipartkey.com/mpngs/m/73-737810_banner-royalty-free-stock-ghiza-plumbing-plumber-icon.png" />
             </Card>
              
@@ -143,7 +144,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/teacher/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://png.pngtree.com/element_our/png_detail/20181208/teaching-icon-png_265271.jpg" />
             </Card>
              
@@ -151,7 +152,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/repairer/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvy07ayE_A7GhtcLOqTNg7ieiJYkD-fk8cNrZ7UlqTMba48Mifn-JcTNEDkqEtOkieWjw&usqp=CAU" />
             </Card>
              
@@ -159,7 +160,7 @@ const HomeScreen = ({ match,history }) => {
         </Col>
         <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Link to={`/service/tiles/order`}>
-          <Card style={{ width: '68px',marginRight:'1px',border:'1px solid #0B8A55' }}>
+          <Card className="service">
               <Card.Img variant="top" width={2} height={80} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCU99HOlUVLTsOpuZ4mFDi0_9d8aUzkm-lAA&usqp=CAU" />
               {/* <Card.Title style={{textAlign:'center',color:'red',fontWeight:'bold'}}>Tiles Mechanic</Card.Title> */}
             </Card>
@@ -168,16 +169,16 @@ const HomeScreen = ({ match,history }) => {
         </Col>
       </Row>
         <div style={{textAlign:'center'}}>
-          <Link to={`/workers/registration`} style={{textAlign:'center'}}><Button style={{backgroundColor:'white',color:'#0B8A55',border:'1px solid #0B8A55'}}>Workers Registration Form</Button>  </Link>
+          <Link to={`/workers/registration`} style={{textAlign:'center'}} ><Button className="workers" >Workers Registration Form</Button>  </Link>
         </div>
       </div>
 
   
       <div style={{textAlign:'center',marginBottom:'10px'}}>
         <Row>
-          <Col style={{padding:'10px',color:'#0B8A55',cursor:'pointer',fontWeight:'bold'}} onClick={()=>handleCategory('Punjabi')}>Punjabi</Col>
-          <Col style={{padding:'10px',color:'#0B8A55',cursor:'pointer',fontWeight:'bold'}} onClick={()=>handleCategory('Grocery')}>Grocery</Col>
-          <Col style={{padding:'10px',color:'#0B8A55',cursor:'pointer',fontWeight:'bold'}} onClick={()=>handleCategory('Boutique')}>Boutique</Col>
+          <Col className="category" onClick={()=>handleCategory('Punjabi')}>Punjabi</Col>
+          <Col className="category" onClick={()=>handleCategory('Grocery')}>Grocery</Col>
+          <Col className="category" onClick={()=>handleCategory('Boutique')}>Boutique</Col>
         </Row>
       
       </div>
@@ -201,7 +202,7 @@ const HomeScreen = ({ match,history }) => {
           <Row>
             {products.map((product) => (
               
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+              <Col key={product._id} xs={6} sm={6} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>
             ))}

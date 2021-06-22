@@ -1,0 +1,37 @@
+.workers:hover{
+    background-color: #0B8A55;
+    color:white
+}
+.workers{
+    background-color: white;
+    color: #0B8A55;
+    border: 1px solid #0B8A55;
+}
+
+.category:hover{
+    background-color: #0B8A55;
+    color:white
+}
+
+.category{
+
+    background-color: white;
+    color: #0B8A55;
+    padding:10px
+
+}
+
+.service:hover{
+
+    opacity: 0.2;
+
+}
+
+.service{
+   
+    margin-right:1px;
+    width:68px;
+    border:1px solid #0B8A55
+
+
+}
