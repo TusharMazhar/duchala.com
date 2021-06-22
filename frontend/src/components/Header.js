@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header style={{marginBottom:'100px'}}>
-      <Navbar fixed='top' style={{backgroundColor:'#0B8A55'}}  variant='dark' expand='lg' collapseOnSelect>
+      <Navbar fixed='top' style={{backgroundColor:'white'}}  variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/' style={{color:'white',fontSize:'30px',fontWeight:'bold',fontFamily:'cursive'}}>
             <Navbar.Brand >দোচালা.কম</Navbar.Brand>
@@ -26,35 +26,35 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route  render={({ history }) => <SearchBox history={history} />} />
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto'>   
               <LinkContainer to='/cart'>
-                <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i><span style={{color:'red',fontSize:'15px'}}>Cart</span>
+                <Nav.Link >
+                  <i style={{color:'#0B8A55'}} className='fas fa-shopping-cart'></i><span style={{color:'#0B8A55',fontSize:'15px'}}>Cart</span>
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to='/about'>
                 <Nav.Link>
-                  <i className='fas fa-about'></i><span style={{color:'white'}}>About</span>
+                  <i className='fas fa-about'></i><span style={{color:'#0B8A55',fontSize:'15px'}}>About</span>
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
-                <NavDropdown title={userInfo.name} id='username'>
+                <NavDropdown style={{backgroundColor:'#0B8A55'}} title={userInfo.name} id='username' >
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
-                  <NavDropdown.Item onClick={logoutHandler}>
+                  <NavDropdown.Item onClick={logoutHandler} >
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
-                  <Nav.Link>
-                    <i className='fas fa-user'></i> Sign In
+                  <Nav.Link >
+                    <i className='fas fa-user' ></i><span style={{color:'#0B8A55',fontSize:'15px'}}>Sign In</span>
                   </Nav.Link>
                 </LinkContainer>
               )}
               {userInfo && userInfo.isAdmin && (
-                <NavDropdown title='Admin' id='adminmenu'>
+                <NavDropdown title='Admin' id='adminmenu' style={{backgroundColor:'#0B8A55'}}>
                   <LinkContainer to='/admin/userlist'>
                     <NavDropdown.Item>Users</NavDropdown.Item>
                   </LinkContainer>

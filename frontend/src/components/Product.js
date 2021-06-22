@@ -11,7 +11,7 @@ const Product = ({ product }) => {
   return loading?(
      <Loader />
   ):(
-    <Card className='my-3 p-3 rounded'>
+    <Card className='my-3 p-3 rounded' style={{border:'1px solid #0B8A55'}}>
         <Card.Img src={product.image} variant='top' />
       <Card.Body>
           <Card.Title as='div'>
