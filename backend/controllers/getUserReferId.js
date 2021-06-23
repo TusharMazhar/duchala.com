@@ -10,8 +10,8 @@ const getUserReferId= async (req,res)=>{
 const getUser= async (req,res)=>{
    
     const user= await User.find()
-    // const s =user.filter(item=> item.referId==='Ekram5971565')
-    const s =user.filter(item=> item.referId==='Tania6439289')
+    const s =user.filter(item=> item.referId==='Ekram5971565')
+    // const s =user.filter(item=> item.referId==='Tania6439289')
 
     if(s){
        s[0].name = s[0].name
