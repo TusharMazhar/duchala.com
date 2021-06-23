@@ -1,11 +1,13 @@
 import React, { useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Card,Button} from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
+import SearchBox from '../components/SearchBox'
 // import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
@@ -38,6 +40,9 @@ const HomeScreen = ({ match,history }) => {
 
   return (
     <> 
+      <div class="mb-3 pt-4 d-flex justify-content-center position-sticky fixed-top" >
+        <Route render={({ history }) => <SearchBox history={history} />} />
+      </div>
       <div style={{textAlign:'center'}}>
         <h5 style={{color:'#0B8A55',fontWeight:'bold'}}>Our Services</h5>
       </div>
