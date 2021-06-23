@@ -149,6 +149,19 @@ const getUserById = asyncHandler(async (req, res) => {
   }
 })
 
+// referiD
+
+const getUserReferId = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.referId)
+
+  if (user) {
+    res.json(user)
+  } else {
+    res.status(404)
+    throw new Error('User not found')
+  }
+})
+
 // @desc    Update user
 // @route   PUT /api/users/:id
 // @access  Private/Admin

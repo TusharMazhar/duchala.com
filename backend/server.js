@@ -8,6 +8,9 @@ import connectDB from './config/db.js'
 
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+
+import userReferId from './routes/userReferId.js'
+
 import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import serviceRoutes from './routes/serviceRoutes.js'
@@ -33,6 +36,9 @@ app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/service/order', serviceRoutes)
 app.use('/api/service/registration', registrationRoutes)
+
+app.use('/api/user/referid/',userReferId)
+
 
 app.get('/api/config/paypal', (req, res) =>
   res.send(process.env.PAYPAL_CLIENT_ID)

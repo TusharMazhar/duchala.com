@@ -75,8 +75,9 @@ const ProfileScreen = ({ location, history }) => {
           <Form onSubmit={submitHandler}>
             {referActive?(
               <Form.Group controlId='referId'>
-              <Form.Label>Refer Id:</Form.Label>
+              <Form.Label style={{color:'red',fontWeight:'bold'}}>Refer Id:</Form.Label>
               <Form.Control
+                style={{backgroundColor:'red',fontWeight:'bold',color:'white'}}
                 type="referId"
                 value={referId}
                 readOnly
@@ -86,8 +87,9 @@ const ProfileScreen = ({ location, history }) => {
 
             {referActive?(
               <Form.Group controlId='referBonus'>
-              <Form.Label>Refer Bonus:</Form.Label>
+              <Form.Label style={{color:'#0B8A55',fontWeight:'bold'}}>Refer Bonus Taka:</Form.Label>
               <Form.Control
+                style={{backgroundColor:'#0B8A55',fontWeight:'bold',color:'white'}}
                 type="referBonus"
                 value={referBonus}
                 readOnly

@@ -1,7 +1,7 @@
 import React, { useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card,Button,Container} from 'react-bootstrap'
+import { Row, Col, Card,Button} from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -10,7 +10,7 @@ import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 import "./Box.css"
-import Image  from '../components/Image'
+// import Image  from '../components/Image'
 
 const HomeScreen = ({ match,history }) => {
   const [category, setCategory] = useState('')
@@ -175,11 +175,12 @@ const HomeScreen = ({ match,history }) => {
       </div>
 
   
-      <div style={{textAlign:'center',marginBottom:'10px'}}>
+      <div style={{textAlign:'center',marginBottom:'10px',cursor:'pointer'}}>
         <Row>
-          <Col className="category" onClick={()=>handleCategory('Punjabi')}>Punjabi</Col>
+          <Col className="category" onClick={()=>handleCategory('Sobji')}>Sobji</Col>
           <Col className="category" onClick={()=>handleCategory('Grocery')}>Grocery</Col>
-          <Col className="category" onClick={()=>handleCategory('Boutique')}>Boutique</Col>
+          <Col className="category" onClick={()=>handleCategory('Mach')}>Mach</Col>
+          <Col className="category" onClick={()=>handleCategory('Mach')}>Mangso</Col>
         </Row>
       
       </div>
@@ -200,14 +201,6 @@ const HomeScreen = ({ match,history }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Row>
-
-
-
-
-
-          </Row>
-
           <Row>
             {products.map((product) => (
               
