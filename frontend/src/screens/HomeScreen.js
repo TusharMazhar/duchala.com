@@ -1,7 +1,7 @@
 import React, { useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card,Button} from 'react-bootstrap'
+import { Row, Col, Card,Button,Container} from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -38,10 +38,7 @@ const HomeScreen = ({ match,history }) => {
   }
 
   return (
-    <> 
-      {/* <Row>
-        <Image></Image>
-      </Row> */}
+    <div style={{marginBottom:'30px'}}> 
       <div style={{textAlign:'center'}}>
         <h5 style={{color:'#0B8A55',fontWeight:'bold'}}>Our Services</h5>
       </div>
@@ -204,6 +201,14 @@ const HomeScreen = ({ match,history }) => {
       ) : (
         <>
           <Row>
+
+
+
+
+
+          </Row>
+
+          <Row>
             {products.map((product) => (
               
               <Col key={product._id} xs={12} sm={6} md={6} lg={4} xl={3}>
@@ -218,7 +223,7 @@ const HomeScreen = ({ match,history }) => {
           />
         </>
       )}
-    </>
+    </div>
   )
 }
 

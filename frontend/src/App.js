@@ -43,7 +43,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3'>
+      <main className='py-12'>
         <Container>
           <Route exact path='/service/medicine/order' component={MedicineService} />
           <Route exact path='/service/car/order' component={CarService} />

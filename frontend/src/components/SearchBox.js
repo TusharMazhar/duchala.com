@@ -16,7 +16,7 @@ const SearchBox = ({ history }) => {
   return (
     <Form onSubmit={submitHandler} inline >
       <Form.Control
-        style={{width:'150px',border:'1px solid #0B8A55'}}
+        style={{width:'200px',border:'1px solid #0B8A55'}}
         type='text'
         name='q'
         onChange={(e) => setKeyword(e.target.value)}
