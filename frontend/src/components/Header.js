@@ -5,6 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
+import Logo from '../logo.png'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -17,11 +18,11 @@ const Header = () => {
   }
 
   return (
-    <header style={{marginBottom:'100px'}}>
+    <header style={{marginBottom:'105px'}}>
       <Navbar fixed='top' style={{backgroundColor:'white'}}  variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <LinkContainer to='/' style={{color:'white',fontSize:'30px',fontWeight:'bold',fontFamily:'cursive'}}>
-            <Navbar.Brand >দোচালা.কম</Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand ><img src={Logo}  width="130px" /></Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' style={{backgroundColor:'#0B8A55'}} />
           <Navbar.Collapse id='basic-navbar-nav'>
