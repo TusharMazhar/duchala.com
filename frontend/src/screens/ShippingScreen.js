@@ -12,8 +12,6 @@ const ShippingScreen = ({ history }) => {
 
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
-  const [userReferId, setUserRefer] = useState('')
-
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
@@ -68,15 +66,7 @@ const ShippingScreen = ({ history }) => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group> */}
-        <Form.Group controlId='userReferId'>
-          <Form.Label>User Refer Id [optional]</Form.Label>
-          <Form.Control
-            type='userReferId'
-            placeholder='Enter Refer Id'
-            value={userReferId}
-            onChange={(e) => setUserRefer(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+
 
         <Button type='submit' style={{backgroundColor:'#0B8A55'}} >
           Continue

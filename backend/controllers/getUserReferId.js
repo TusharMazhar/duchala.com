@@ -1,17 +1,11 @@
 import User from '../models/userModel.js'
 
-const getUserReferId= async (req,res)=>{
-   
-    const referId = await User.findById(req.params.referId)
-    res.json(referId)
+const getUserReferId = async (req,res)=>{
 
-} 
+    const [referId,userId] = req.params.id.split('USAIRELAND')
+    const users= await User.find()
+    const s =users.filter(item=> item.referId===referId)
 
-const getUser= async (req,res)=>{
-   
-    const user= await User.find()
-    const s =user.filter(item=> item.referId==='Ekram5971565')
-    // const s =user.filter(item=> item.referId==='Tania6439289')
 
     if(s){
        s[0].name = s[0].name
@@ -22,17 +16,36 @@ const getUser= async (req,res)=>{
        s[0].referActive = s[0].referActive
        s[0].referBonus = s[0].referBonus + 20
 
-       const update = await s[0].save()
-       res.json({"success":true})
+       await s[0].save().then(async ()=>{
+         const user = await User.findById(userId)
+         if(user){
+            user.name = user.name
+            user.email = user.email
+            user.password = user.password
+            user.isAdmin = user.isAdmin
+            user.referId = user.referId
+            user.referActive = true
+            user.referBonus = user.referBonus 
+
+            await user.save().then(()=>{
+                res.json({"active": true})
+            })
+             
+         }
+   
+            
+
+        
+       })
+       
 
     }else{
-        res.json({"Fail": false})
+        res.json({"active": false})
     }
     
 
 } 
 
 export{
-    getUser,
     getUserReferId
 }

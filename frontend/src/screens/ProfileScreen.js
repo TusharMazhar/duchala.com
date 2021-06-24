@@ -8,10 +8,10 @@ import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { listMyOrders } from '../actions/orderActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
-const ProfileScreen = ({ location, history }) => {
-  const [referActive, setActive] = useState(Boolean)
+const ProfileScreen = ({  history }) => {
+  const [referActive, setActive] = useState('')
   const [name, setName] = useState('')
-  const [referBonus, setBonus] = useState(Number)
+  const [referBonus, setBonus] = useState('')
   const [referId, setRefer] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -23,11 +23,15 @@ const ProfileScreen = ({ location, history }) => {
   const userDetails = useSelector((state) => state.userDetails)
   const { loading, error, user } = userDetails
 
+  console.log('user details',user)
+
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
+  console.log('user info',userInfo)
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
   const { success } = userUpdateProfile
+  console.log('success',success)
 
   const orderListMy = useSelector((state) => state.orderListMy)
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
@@ -41,7 +45,6 @@ const ProfileScreen = ({ location, history }) => {
         dispatch(getUserDetails('profile'))
         dispatch(listMyOrders())
       } else {
-        console.log(user,user)
         setName(user.name)
         setEmail(user.email)
         setRefer(user.referId)

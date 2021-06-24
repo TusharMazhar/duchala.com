@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,useState} from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import { Button, Row, Col, ListGroup, Image, Card,Form } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
 import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 import { USER_DETAILS_RESET } from '../constants/userConstants'
+import { get } from 'mongoose'
+import axios from 'axios'
 
 const PlaceOrderScreen = ({ history }) => {
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+  console.log('user',userInfo._id )
   const dispatch = useDispatch()
+  const [userReferId,setUserRefer] = useState('')
 
   const cart = useSelector((state) => state.cart)
 
@@ -46,7 +52,7 @@ const PlaceOrderScreen = ({ history }) => {
     // eslint-disable-next-line
   }, [history, success])
 
-  const placeOrderHandler = () => {
+  const placeUserOrder = async ()=>{
     dispatch(
       createOrder({
         orderItems: cart.cartItems,
@@ -58,6 +64,21 @@ const PlaceOrderScreen = ({ history }) => {
         totalPrice: cart.totalPrice,
       })
     )
+  }
+
+  const placeOrderHandler = async () => {
+    if(userReferId!==''){
+      
+      const referIdUserId = (userReferId+'USAIRELAND'+userInfo._id)
+      console.log(referIdUserId)
+      await axios.get(`/api/user/referId/${referIdUserId}`).then(()=>{
+         placeUserOrder()
+      })
+
+    }else{
+      placeUserOrder()
+    }
+    
   }
 
   return (
@@ -145,6 +166,15 @@ const PlaceOrderScreen = ({ history }) => {
                   <Col style={{color:'red'}}>{cart.totalPrice} Taka</Col>
                 </Row>
               </ListGroup.Item>
+              <Form.Group controlId='userReferId' style={{marginTop:'5px'}}>
+                <Form.Control
+                  style={{backgroundColor:'black',color:'white'}}
+                  type='userReferId'
+                  placeholder='Enter Refer Id [optional]'
+                  value={userReferId}
+                  onChange={(e) => setUserRefer(e.target.value)}
+                ></Form.Control>
+             </Form.Group>
               <ListGroup.Item>
                 {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
