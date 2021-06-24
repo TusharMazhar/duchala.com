@@ -6,8 +6,7 @@ const getUserReferId = async (req,res)=>{
     const users= await User.find()
     const s =users.filter(item=> item.referId===referId)
 
-
-    if(s){
+    if(s.length!==0){
        s[0].name = s[0].name
        s[0].email = s[0].email
        s[0].password = s[0].password

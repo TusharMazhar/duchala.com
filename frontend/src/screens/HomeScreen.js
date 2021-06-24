@@ -45,7 +45,7 @@ const HomeScreen = ({ match,history }) => {
           <h5 style={{color:'white',fontWeight:'bold',paddingTop:'30px'}}>Our Services</h5>
         </div>
         <div style={{marginBottom:'20px',marginLeft:'14px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Row style={{paddingRight:'14px'}}>
+          <Row style={{paddingRight:'15px',paddingLeft:'4px'}}>
             <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
               <Link to={`/service/doctor/order`}>
                 <Card className="service">

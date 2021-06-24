@@ -17,6 +17,7 @@ const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch()
   const [userReferId,setUserRefer] = useState('')
 
+  const [validReferId,setResult] = useState(true)
   const cart = useSelector((state) => state.cart)
 
   if (!cart.shippingAddress.address) {
@@ -42,6 +43,7 @@ const PlaceOrderScreen = ({ history }) => {
 
   const orderCreate = useSelector((state) => state.orderCreate)
   const { order, success, error } = orderCreate
+
 
   useEffect(() => {
     if (success) {
@@ -71,8 +73,14 @@ const PlaceOrderScreen = ({ history }) => {
       
       const referIdUserId = (userReferId+'USAIRELAND'+userInfo._id)
       console.log(referIdUserId)
-      await axios.get(`/api/user/referId/${referIdUserId}`).then(()=>{
-         placeUserOrder()
+      await axios.get(`/api/user/referId/${referIdUserId}`).then((res)=>{
+         if(res.data.active){
+          placeUserOrder()
+         }else{
+            setResult(false)
+         }
+  
+      
       })
 
     }else{
@@ -175,6 +183,11 @@ const PlaceOrderScreen = ({ history }) => {
                   onChange={(e) => setUserRefer(e.target.value)}
                 ></Form.Control>
              </Form.Group>
+              {
+                validReferId?'':(
+                  <p style={{color:'red',margin:'auto'}}>Refer id is not valid !!</p>
+                )
+              }
               <ListGroup.Item>
                 {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
