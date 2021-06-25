@@ -91,18 +91,18 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <Message variant='success'>Order Placed Succesfully</Message>
-      <h5>Order Id: {order.user.name.substr(0,5)}-{order._id.substr(0,5)}</h5>
+      <Message variant='success'>আপনার অর্ডার সফল হয়েছে</Message>
+      <h5>অর্ডার আইডি: {order.user.name.substr(0,5)}-{order._id.substr(0,5)}</h5>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>পণ্যগুলো নিচের ঠিকানা যাবে</h2>
               <p>
-                <strong>Name: </strong> {order.user.name}
+                <strong>নাম: </strong> {order.user.name}
               </p>
               <p>
-                <strong>Phone Number: </strong>{' '}
+                <strong>মোবাইল নাম্বার: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
@@ -113,30 +113,30 @@ const OrderScreen = ({ match, history }) => {
               </p>
               {order.isDelivered ? (
                 <Message variant='success'>
-                  Delivered on {order.deliveredAt}
+                  ডেলিভারি হয়েছে {order.deliveredAt}
                 </Message>
               ) : (
-                <Message variant='danger'>Not Delivered</Message>
+                <Message variant='danger'>ডেলিভারি হয় নাই</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
+              <h2>আপনি নিচের পেমেন্ট অপশন সিলেক্ট করেছেন</h2>
               <p>
-                <strong>Method: </strong>
+                <strong>অপশন: </strong>
                 {order.paymentMethod}
               </p>
               {order.isDelivered ? (
-                <Message variant='success'>Paid</Message>
+                <Message variant='success'>টাকা পরিশোধ হয়েছে</Message>
               ) : (
-                <Message variant='danger'>Not Paid</Message>
+                <Message variant='danger'>টাকা পরিশোধ হয়নি</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>আপনার পণ্যসমূহ</h2>
               {order.orderItems.length === 0 ? (
-                <Message>Order is empty</Message>
+                <Message>কোন অর্ডার করেননি</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
@@ -156,7 +156,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ৳{item.price} = {item.qty * item.price} টাকা
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -170,30 +170,30 @@ const OrderScreen = ({ match, history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>অর্ডার সামারি</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
-                  <Col>{order.itemsPrice} Taka</Col>
+                  <Col>পণ্যসমূহ</Col>
+                  <Col>{order.itemsPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
-                  <Col>{order.shippingPrice} Taka</Col>
+                  <Col>ডেলিভারি ফী</Col>
+                  <Col>{order.shippingPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              {/* <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
                   <Col>{order.taxPrice} Taka</Col>
                 </Row>
-              </ListGroup.Item>
+              </ListGroup.Item> */}
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
-                  <Col>{order.totalPrice} Taka</Col>
+                  <Col>সর্বমোট</Col>
+                  <Col>{order.totalPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
               {order.isPaid && (
@@ -227,7 +227,7 @@ const OrderScreen = ({ match, history }) => {
                 )}
               <ListGroup.Item style={{textAlign:'center'}}>
               <Link className='btn btn-light' style={{backgroundColor:'#0B8A55',marginLeft:'6px',color:'white'}} to='/'>
-                  Product Page
+                   হোম পেজ
                 </Link>
               </ListGroup.Item>
             </ListGroup>

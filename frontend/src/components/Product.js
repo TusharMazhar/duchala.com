@@ -13,7 +13,7 @@ const Product = ({ product }) => {
      <Loader />
   ):(
     <Card className='my-3 p-3 rounded' style={{border:'1px solid #0B8A55'}} >
-      <Card.Img src={product.image} variant='top'/>
+      <Card.Img src={product.image} variant='top' height="160px"/>
       <Card.Body>
           <Card.Title as='div' >
             <strong>{product.name}</strong>
@@ -21,15 +21,15 @@ const Product = ({ product }) => {
         <Card.Text as='div'>
           <Rating
             value={product.rating}
-            text={`${product.numReviews} reviews`}
+            text={`${product.numReviews} রিভিউ`}
           />
         </Card.Text>
 
-        <Card.Text as='h3'>{product.price} Taka</Card.Text>
+        <Card.Text as='h5' style={{marginTop:'5px'}}>{product.price} টাকা/কেজি</Card.Text>
         <div style={{textAlign:'center'}}>
         <Link to={`/product/${product._id}`}>
           <Button  className="product">
-              Add To Cart
+              ব্যাগে যোগ করুন
           </Button>
         </Link>
         </div>

@@ -47,62 +47,62 @@ const RegisterScreen = ({ location, history }) => {
   }
 
   return (
-    <FormContainer>
-      <h1 style={{color:'#0B8A55'}}>Sign Up</h1>
+    <FormContainer >
+      <h1 style={{color:'#0B8A55'}}>রেজিষ্টেশন করুন</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
-          <Form.Label>Name</Form.Label>
+          <Form.Label>আপনার নাম</Form.Label>
           <Form.Control
             type='name'
-            placeholder='Enter name'
+            placeholder='আপনার নামটি লিখুন'
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='email'>
-          <Form.Label>Phone Number</Form.Label>
+          <Form.Label>মোবাইল নাম্বার</Form.Label>
           <Form.Control
             type='number'
-            placeholder='Phone Number'
+            placeholder='মোবাইল নাম্বারটি লিখুন'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label>পাসওয়ার্ড</Form.Label>
           <Form.Control
             type='password'
-            placeholder='Enter password'
+            placeholder='পাসওয়ার্ডটি লিখুন'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='confirmPassword'>
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label>পাসওয়ার্ড কনফার্ম</Form.Label>
           <Form.Control
             type='password'
-            placeholder='Confirm password'
+            placeholder='পাসওয়ার্ডটি লিখুন'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Button type='submit' variant='primary' style={{backgroundColor:'#0B8A55'}}>
-          Register
+            রেজিষ্টেশন করুন
         </Button>
       </Form>
 
       <Row className='py-3'>
         <Col>
-          Have an Account?{' '}
-          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Login
+          আপনার কি একাউন্ট আছে?{' '}
+          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} style={{fontWeight:'bold'}}>
+            লগিন করুন
           </Link>
         </Col>
       </Row>

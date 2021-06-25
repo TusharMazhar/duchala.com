@@ -96,9 +96,9 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Delivery Place</h2>
+              <h2>পণ্যগুলো নিচের ঠিকানায় যাবে</h2>
               <p>
-                <strong>Address:</strong>
+                <strong>ঠিকানা:</strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
                 {cart.shippingAddress.postalCode},{' '}
                 {cart.shippingAddress.country}
@@ -106,15 +106,15 @@ const PlaceOrderScreen = ({ history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
-              <strong>Method: </strong>
+              <h2>আপনি পেমেন্ট অপশন সিলেক্ট করেছেন</h2>
+              <strong>অপশন: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>নিচের পণ্যগুলো অর্ডার করেছেন</h2>
               {cart.cartItems.length === 0 ? (
-                <Message>Your cart is empty</Message>
+                <Message>আপনার ব্যাগে কোন পণ্য নাই</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {cart.cartItems.map((item, index) => (
@@ -134,7 +134,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x Taka ({item.price}) = {item.qty * item.price} Taka
+                          {item.qty} x ({item.price}) = {item.qty * item.price} টাকা
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -148,44 +148,44 @@ const PlaceOrderScreen = ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>অর্ডার সামারি</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
-                  <Col>{cart.itemsPrice} Taka</Col>
+                  <Col>পণ্যগুলোর প্রাইস</Col>
+                  <Col>{cart.itemsPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Delivery Charge</Col>
-                  <Col>{cart.shippingPrice} Taka</Col>
+                  <Col>ডেলিভারি ফী</Col>
+                  <Col>{cart.shippingPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
+              {/* <ListGroup.Item>
                 <Row>
-                  <Col>Tax</Col>
-                  <Col>{cart.taxPrice} Taka</Col>
+                  <Col> ট্যাক্স</Col>
+                  <Col>{cart.taxPrice} টাকা</Col>
                 </Row>
-              </ListGroup.Item>
+              </ListGroup.Item> */}
               <ListGroup.Item>
                 <Row>
-                  <Col style={{color:'red'}}>Total</Col>
-                  <Col style={{color:'red'}}>{cart.totalPrice} Taka</Col>
+                  <Col style={{color:'red'}}>সর্বমোট</Col>
+                  <Col style={{color:'red'}}>{cart.totalPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
               <Form.Group controlId='userReferId' style={{marginTop:'5px'}}>
                 <Form.Control
                   style={{backgroundColor:'black',color:'white'}}
                   type='userReferId'
-                  placeholder='Enter Refer Id [optional]'
+                  placeholder='যদি রেফার আইডি থাকে লিখুন'
                   value={userReferId}
                   onChange={(e) => setUserRefer(e.target.value)}
                 ></Form.Control>
              </Form.Group>
               {
                 validReferId?'':(
-                  <p style={{color:'red',margin:'auto'}}>Refer id is not valid !!</p>
+                  <p style={{color:'red',margin:'auto'}}>আপনার সংগ্রহ করা রেফার আইডি সঠিক নয়!!</p>
                 )
               }
               <ListGroup.Item>
@@ -199,12 +199,12 @@ const PlaceOrderScreen = ({ history }) => {
                   disabled={cart.totalPrice<500}
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  অর্ডার করুন
                 </Button>
               </ListGroup.Item>
               <ListGroup.Item style={{textAlign:'center'}}>
               <Link className='btn btn-light' style={{backgroundColor:'#0B8A55',marginLeft:'6px',color:'white'}} to='/'>
-                  Go Back
+                  হোম পেজ
                 </Link>
               </ListGroup.Item>
               

@@ -23,13 +23,13 @@ const ShippingScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1>আপনার পণ্যগুলো কোথায় পাঠাব?</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
-          <Form.Label>Address</Form.Label>
+          <Form.Label>ঠিকানা</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter address'
+            placeholder='আপানার ঠিকানা লিখুন'
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -37,10 +37,10 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
 
         <Form.Group controlId='city'>
-          <Form.Label>City</Form.Label>
+          <Form.Label>আপনি কোন শহরে থাকেন?</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter city'
+            placeholder='শহরের নাম লিখুন'
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
@@ -69,10 +69,10 @@ const ShippingScreen = ({ history }) => {
 
 
         <Button type='submit' style={{backgroundColor:'#0B8A55'}} >
-          Continue
+           পরের পেযে যান
         </Button>
         <Link className='btn btn-light my-3' style={{backgroundColor:'#0B8A55',marginLeft:'6px',color:'white'}} to='/'>
-        Go Back
+          হোম পেজ
       </Link>
       </Form>
     </FormContainer>

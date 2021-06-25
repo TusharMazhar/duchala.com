@@ -31,40 +31,40 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1 style={{color:'#0B8A55'}}>Sign In</h1>
+      <h1 style={{color:'#0B8A55'}}>লগিন করুন</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label>Phone Number</Form.Label>
+          <Form.Label>মোবাইল নাম্বার</Form.Label>
           <Form.Control
             type='number'
-            placeholder='Phone Number'
+            placeholder='মোবাইল নাম্বারটি লিখুন'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label>পাসওয়ার্ড</Form.Label>
           <Form.Control
             type='password'
-            placeholder='Enter password'
+            placeholder='পাসওয়ার্ডটি লিখুন'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Button type='submit' variant='primary' style={{backgroundColor:'#0B8A55'}}>
-          Sign In
+           লগিন করুন
         </Button>
       </Form>
 
       <Row className='py-3'>
         <Col>
-          New Customer?{' '}
-          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Register
+          আপনি কি নতুন ব্যবহারকারি?{' '}
+          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'} style={{fontWeight:'bold'}}>
+            রেজিষ্টেশন করুন
           </Link>
         </Col>
       </Row>

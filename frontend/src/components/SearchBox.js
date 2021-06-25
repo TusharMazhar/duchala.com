@@ -20,7 +20,7 @@ const SearchBox = ({ history }) => {
         type='text'
         name='q'
         onChange={(e) => setKeyword(e.target.value)}
-        placeholder='Search Products Here...'
+        placeholder='পণ্য সার্চ করুন...'
         className='mr-sm-2 ml-sm-5'
       ></Form.Control>
       <Button type='submit' style={{backgroundColor:'#0B8A55',height:'45px'}}  className='p-2'>

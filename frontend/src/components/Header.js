@@ -30,12 +30,12 @@ const Header = () => {
             <Nav className='ml-auto'>   
               <LinkContainer to='/cart'>
                 <Nav.Link >
-                  <i style={{color:'#0B8A55'}} className='fas fa-shopping-cart'></i><span style={{color:'#0B8A55',fontSize:'15px'}}>Cart</span>
+                  <i style={{color:'#0B8A55'}} className='fas fa-shopping-cart'></i><span style={{color:'#0B8A55',fontSize:'15px'}}>পণ্যসমূহ</span>
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to='/about'>
                 <Nav.Link>
-                  <i className='fas fa-about'></i><span style={{color:'#0B8A55',fontSize:'15px'}}>About</span>
+                  <i className='fas fa-about'></i><span style={{color:'#0B8A55',fontSize:'15px'}}>আমাদের সম্পর্কে</span>
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
@@ -50,7 +50,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link >
-                    <i className='fas fa-user' ></i><span style={{color:'#0B8A55',fontSize:'15px'}}>Sign In</span>
+                    <i className='fas fa-user' ></i><span style={{color:'#0B8A55',fontSize:'15px'}}>লগিন করুন</span>
                   </Nav.Link>
                 </LinkContainer>
               )}

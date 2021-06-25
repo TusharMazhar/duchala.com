@@ -42,7 +42,7 @@ const HomeScreen = ({ match,history }) => {
     <div style={{marginBottom:'30px'}}> 
       <div style={{backgroundImage: "url(" + InnerBgImg +")",width:"auto"}}>
         <div style={{textAlign:'center'}}>
-          <h5 style={{color:'white',fontWeight:'bold',paddingTop:'30px'}}>Our Services</h5>
+          <h5 style={{color:'white',fontWeight:'bold',paddingTop:'30px'}}>আমাদের সেবাসমূহ</h5>
         </div>
         <div style={{marginBottom:'20px',marginLeft:'14px',paddingRight:'0px',paddingLeft:'0px'}}>
           <Row style={{paddingRight:'15px',paddingLeft:'4px'}}>
@@ -172,7 +172,7 @@ const HomeScreen = ({ match,history }) => {
             </Col>
           </Row>
           <div style={{textAlign:'center',paddingBottom:'30px'}}>
-            <Link to={`/workers/registration`} style={{textAlign:'center'}} ><Button className="workers" >Workers Registration Form</Button>  </Link>
+            <Link to={`/workers/registration`} style={{textAlign:'center'}} ><Button className="workers" >কর্মী রেজিষ্টেশন</Button>  </Link>
           </div>
       </div>
       </div>
@@ -181,10 +181,10 @@ const HomeScreen = ({ match,history }) => {
   
       <div style={{paddingLeft:"15px",paddingRight:"15px",textAlign:'center',marginBottom:'10px',cursor:'pointer'}}>
         <Row>
-          <Col className="category" onClick={()=>handleCategory('Sobji')}>Sobji</Col>
-          <Col className="category" onClick={()=>handleCategory('Grocery')}>Grocery</Col>
-          <Col className="category" onClick={()=>handleCategory('Mach')}>Mach</Col>
-          <Col className="category" onClick={()=>handleCategory('Mach')}>Mangso</Col>
+          <Col className="category" onClick={()=>handleCategory('vegetables')}>সবজি</Col>
+          <Col className="category" onClick={()=>handleCategory('fish')}>মাছ</Col>
+          <Col className="category" onClick={()=>handleCategory('meat')}>মাংস</Col>
+          <Col className="category" onClick={()=>handleCategory('grocery')}>মুদি পণ্য</Col>
         </Row>
       
       </div>

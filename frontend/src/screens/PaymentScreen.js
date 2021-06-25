@@ -27,14 +27,14 @@ const PaymentScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1>আপনি কিভাবে পেমেন্ট করবেন?</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as='legend'>Select Method</Form.Label>
+          <Form.Label as='legend'>পেমেন্ট অপশন সিলেক্ট করুন</Form.Label>
           <Col>
             <Form.Check
               type='radio'
-              label='Cash On Delivery'
+              label='ক্যাশ অন ডেলিভারি'
               checked
             ></Form.Check>
             {/* <Form.Check
@@ -49,10 +49,10 @@ const PaymentScreen = ({ history }) => {
         </Form.Group>
 
         <Button type='submit' variant='primary' style={{backgroundColor:'#0B8A55',color:'white'}}>
-          Continue
+          পরের পেজে যান
         </Button>
         <Link className='btn btn-light my-3' style={{backgroundColor:'#0B8A55',marginLeft:'6px',color:'white'}} to='/'>
-        Go Back
+         হোম পেজ
       </Link>
       </Form>
     </FormContainer>

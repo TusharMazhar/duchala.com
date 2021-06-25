@@ -60,7 +60,7 @@ const ProductScreen = ({ history, match }) => {
   return (
     <>
       <Link className='btn btn-light my-3' style={{backgroundColor:'#0B8A55',color:'white'}} to='/'>
-        Go Back
+         হোম পেজ
       </Link>
       {loading ? (
         <Loader />
@@ -81,12 +81,12 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <Rating
                     value={product.rating}
-                    text={`${product.numReviews} reviews`}
+                    text={`${product.numReviews} রিভিউ`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: {product.price} Taka</ListGroup.Item>
+                <ListGroup.Item>প্রাইস: {product.price} টাকা</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  প্রোডাক্টের বর্ণনা: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -95,18 +95,18 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
+                      <Col>প্রাইস:</Col>
                       <Col>
-                        <strong>{product.price*qty} Taka</strong>
+                        <strong>{product.price*qty} টাকা</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
 
                   <ListGroup.Item>
                     <Row>
-                      <Col>Status:</Col>
+                      <Col>স্ট্যাটাস:</Col>
                       <Col>
-                        {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                        {product.countInStock > 0 ? 'স্টকে আছে' : 'স্টকে নাই'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -114,7 +114,7 @@ const ProductScreen = ({ history, match }) => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty</Col>
+                        <Col>পরিমাণ</Col>
                         <Col>
                           <Form.Control
                             as='select'
@@ -142,7 +142,7 @@ const ProductScreen = ({ history, match }) => {
                       type='button'
                       disabled={product.countInStock === 0}
                     >
-                      Add To Cart
+                      ব্যাগে যোগ করুন
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
@@ -151,7 +151,7 @@ const ProductScreen = ({ history, match }) => {
           </Row>
           <Row>
             <Col md={6}>
-              <h2>Reviews</h2>
+              <h2>প্রোডাক্ট রিভিউ</h2>
               {product.reviews.length === 0 && <Message>No Reviews</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
@@ -163,10 +163,10 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>
-                  <h2>Write a Customer Review</h2>
+                  <h2>প্রোডাক্ট সম্পর্কে আপনার মতামত লিখুন</h2>
                   {successProductReview && (
                     <Message variant='success'>
-                      Review submitted successfully
+                       আপনার মতামত গ্রহণ হয়েছে।
                     </Message>
                   )}
                   {loadingProductReview && <Loader />}
@@ -176,13 +176,13 @@ const ProductScreen = ({ history, match }) => {
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group controlId='rating'>
-                        <Form.Label>Rating</Form.Label>
+                        <Form.Label>রেটিং</Form.Label>
                         <Form.Control
                           as='select'
                           value={rating}
                           onChange={(e) => setRating(e.target.value)}
                         >
-                          <option value=''>Select...</option>
+                          <option value=''>সিলেক্ট করুন...</option>
                           <option value='1'>1 - Poor</option>
                           <option value='2'>2 - Fair</option>
                           <option value='3'>3 - Good</option>
@@ -191,7 +191,7 @@ const ProductScreen = ({ history, match }) => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group controlId='comment'>
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label>কমেন্ট</Form.Label>
                         <Form.Control
                           as='textarea'
                           row='3'
@@ -204,12 +204,12 @@ const ProductScreen = ({ history, match }) => {
                         type='submit'
                         variant='primary'
                       >
-                        Submit
+                        সাবমিট করুন
                       </Button>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to='/login'>sign in</Link> to write a review{' '}
+                      দয়া করে <Link to='/login'>লগিন করুন</Link>,আপনার মতামত দেওয়ার জন্যে।{' '}
                     </Message>
                   )}
                 </ListGroup.Item>
