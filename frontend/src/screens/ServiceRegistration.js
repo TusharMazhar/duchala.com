@@ -27,11 +27,12 @@ const ServiceRegisterScreen = () => {
   }
 
   return (
-    <FormContainer>
-      <Card style={{width:'522px',height:'100px',backgroundColor:'#0B8A55',color:'white',textAlign:'center',padding:'10px'}}>
-        <p>আপনার কাজের দক্ষতা অনুযায়ী রেজিষ্টেশন করুন। আপনি একাধিকবার কাজের দক্ষতা অনুযায়ী রেজিষ্টেশন করতে পারবেন।</p>
-        <p>আপনাকে অগ্রিম ধন্যবাদ জানাচ্ছি আমাদের সাথে যুক্ত হওয়ার জন্যে।</p>
-      </Card>
+    <Card.Body >
+    <Card.Text style={{margin:'auto',backgroundColor:'#0B8A55',color:'white',textAlign:'center',padding:'20px'}}>
+        <span>আপনার কাজের দক্ষতা অনুযায়ী রেজিষ্টেশন করুন। আপনি একাধিকবার কাজের দক্ষতা অনুযায়ী রেজিষ্টেশন করতে পারবেন।</span>
+        <span> আপনাকে অগ্রিম ধন্যবাদ জানাচ্ছি আমাদের সাথে যুক্ত হওয়ার জন্য।</span>
+      </Card.Text>
+    <FormContainer width="522px">
       <h1 style={{color:'#0B8A55',textAlign:'center'}}>কর্মী রেজিষ্টেশন ফর্ম</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
@@ -95,7 +96,7 @@ const ServiceRegisterScreen = () => {
         <Form.Group controlId='description'>
           <Form.Label style={{display:'block'}}>আপনার কাজের বর্ণনা</Form.Label>
           <textarea
-            style={{width:'520px',height:'100px',paddingLeft:'20px',paddingTop:'10px'}}
+            style={{width:'300px',height:'100px',paddingLeft:'20px',paddingTop:'10px'}}
             type='description'
             placeholder='ছোট করে আপনার কাজের বর্ণনা/অভিজ্ঞতা লিখুন'
             value={description}
@@ -104,10 +105,11 @@ const ServiceRegisterScreen = () => {
         </Form.Group >
 
         <Button type='submit' variant='primary' disabled={(name==='') || (phone==='') || (location==='') || (description==='') || (category==='')} style={{backgroundColor:'#0B8A55',marginBottom:'20px'}}>
-           সাবমিট করুন
+          রেজিষ্টেশন করুন
         </Button>
       </Form>
     </FormContainer>
+    </Card.Body>
   )
 }
 

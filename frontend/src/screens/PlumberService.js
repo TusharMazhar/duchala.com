@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Form, Button} from 'react-bootstrap'
+import { Form, Button , Card } from 'react-bootstrap'
 import FormContainer from '../components/FormContainer'
 import { useHistory } from "react-router-dom";
 
@@ -27,53 +27,60 @@ const PlumberService = () => {
   }
 
   return (
+    <Card.Body>
+      <Card.Text style={{margin:'auto',backgroundColor:'#0B8A55',color:'white',textAlign:'center',padding:'20px'}}>
+        <span>আপনি যদি পানির  ট্যাংকি/পাইপের কাজ করাতে চান, তাহলে আমাদের নিচের ফর্মটি পূরণ করে সাবমিট করুন</span>
+        
+      </Card.Text>
     <FormContainer>
-      <h1>Plumber Service</h1>
+      <h1 style={{color:'#0B8A55',textAlign:'center'}}>প্লাম্বার সার্ভিস</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
-          <Form.Label>Name</Form.Label>
+          <Form.Label>নাম</Form.Label>
           <Form.Control
             type='name'
-            placeholder='Enter name'
+            placeholder='আপনার নাম লিখুন'
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='phone'>
-          <Form.Label>Phone Number</Form.Label>
+          <Form.Label>নাম্বার</Form.Label>
           <Form.Control
             type='number'
-            placeholder='Phone Number'
+            placeholder='আপনার নাম্বার লিখুন'
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId='location'>
-          <Form.Label>Address</Form.Label>
+          <Form.Label>ঠিকানা</Form.Label>
           <Form.Control
             type='location'
-            placeholder='Enter your Address'
+            placeholder='আপনার ঠিকানা লিখুন'
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='description'>
-          <Form.Label>Provide Details</Form.Label>
-          <Form.Control
+          <Form.Label style={{display:'block'}}>কাজের বর্ণনা</Form.Label>
+          <textarea
+            style={{width:'300px',height:'100px',paddingLeft:'20px',paddingTop:'10px'}}
             type='description'
-            placeholder='Provide Details'
+            placeholder='আপনি কি কাজ করাতে চান বিস্তারিত লিখুন'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          ></Form.Control>
+          ></textarea>
         </Form.Group>
 
-        <Button type='submit' variant='primary' disabled={(name==='') || (phone==='') || (location==='') || (description==='') || (category==='')}>
-           Order
+        <Button style={{backgroundColor:'#0B8A55',marginBottom:'20px'}} type='submit' variant='primary' disabled={(name==='') || (phone==='') || (location==='') || (description==='') || (category==='')}>
+           সাবমিট করুন
         </Button>
       </Form>
     </FormContainer>
+    </Card.Body>
   )
 }
 

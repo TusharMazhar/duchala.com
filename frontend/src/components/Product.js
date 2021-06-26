@@ -13,10 +13,10 @@ const Product = ({ product }) => {
      <Loader />
   ):(
     <Card className='my-3 p-3 rounded' style={{border:'1px solid #0B8A55'}} >
-      <Card.Img src={product.image} variant='top' height="160px"/>
+      <Card.Img src={product.image} variant='top' height="200px"/>
       <Card.Body>
           <Card.Title as='div' >
-            <strong>{product.name}</strong>
+            <strong>{product.name.substr(0,14)}</strong>
           </Card.Title>
         <Card.Text as='div'>
           <Rating
