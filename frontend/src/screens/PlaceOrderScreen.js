@@ -251,12 +251,20 @@ const PlaceOrderScreen =  ({ history }) => {
         
               <ListGroup.Item>
                 <Row>
-                  <Col style={{color:'green'}}>সর্বমোট</Col>
+                  
                   {
-                    useReferBonus==='yes'?(
-                      <Col style={{color:'green'}}>{cart.totalPrice-referBonus} টাকা</Col>
+                    useReferBonus==='yes' && referBonus<cart.totalPrice?(
+                      <span>
+                        <Col style={{color:'green'}}>সর্বমোট</Col>
+                        <Col style={{color:'green'}}>{cart.totalPrice-referBonus} টাকা</Col>
+                      </span>
+                    ):useReferBonus==='yes' && referBonus>cart.totalPrice?(
+                      <Col style={{color:'red'}}>আপনার রেফার বোনাস,মুল বাজারের থেকে বেশী টাকা। রেফার বোনাস ব্যবহার করতে হলে আপনাকে রেফার বোনাস থেকে বেশী টাকার বাজার করতে হবে।</Col>
                     ):(
-                      <Col style={{color:'green'}}>{cart.totalPrice} টাকা</Col>
+                      <span>
+                        <Col style={{color:'green'}}>সর্বমোট</Col>
+                        <Col style={{color:'green'}}>{cart.totalPrice} টাকা</Col>
+                      </span>
                     )
                   }  
                 </Row>
@@ -287,7 +295,7 @@ const PlaceOrderScreen =  ({ history }) => {
                   style={{backgroundColor:'#0B8A55'}}
                   type='button'
                   className='btn-block'
-                  disabled={cart.totalPrice<500}
+                  disabled={cart.totalPrice<500 || (referBonus>cart.totalPrice)}
                   onClick={placeOrderHandler}
                 >
                   অর্ডার করুন
