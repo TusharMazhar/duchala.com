@@ -191,7 +191,7 @@ const OrderScreen = ({ match, history }) => {
               </ListGroup.Item> */}
               <ListGroup.Item>
                 <Row>
-                <Col>সর্বমোট</Col>
+                <Col>সর্বমোট (বাকী) </Col>
                   {
                     (order.itemsPrice>order.totalPrice)?(
                     

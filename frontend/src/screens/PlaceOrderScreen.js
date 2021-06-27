@@ -255,14 +255,14 @@ const PlaceOrderScreen =  ({ history }) => {
                   {
                     useReferBonus==='yes' && referBonus<cart.totalPrice?(
                       <span>
-                        <Col style={{color:'green'}}>সর্বমোট</Col>
+                        <Col style={{color:'green'}}>সর্বমোট (বাকী)</Col>
                         <Col style={{color:'green'}}>{cart.totalPrice-referBonus} টাকা</Col>
                       </span>
                     ):useReferBonus==='yes' && referBonus>cart.totalPrice?(
                       <Col style={{color:'red'}}>আপনার রেফার বোনাস,মুল বাজারের থেকে বেশী টাকা। রেফার বোনাস ব্যবহার করতে হলে আপনাকে রেফার বোনাস থেকে বেশী টাকার বাজার করতে হবে।</Col>
                     ):(
                       <span>
-                        <Col style={{color:'green'}}>সর্বমোট</Col>
+                        <Col style={{color:'green'}}>সর্বমোট </Col>
                         <Col style={{color:'green'}}>{cart.totalPrice} টাকা</Col>
                       </span>
                     )
