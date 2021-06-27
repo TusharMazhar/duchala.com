@@ -4,6 +4,7 @@ const getUserReferId = async (req,res)=>{
 
     const [referId,userId] = req.params.id.split('USAIRELAND')
     const[a,percentageBonus] = userId.split('IRELANDUSA')
+    userId = a
     const [referBonus,referUser] = req.params.id.split('BONUSUSAIRELAND')
     const users= await User.find()
     const s =users.filter(item=> item.referId===referId)
