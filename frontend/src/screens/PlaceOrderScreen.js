@@ -230,7 +230,7 @@ const PlaceOrderScreen =  ({ history }) => {
                 </Row>
               </ListGroup.Item> */}
               {
-                    (referActive && referBonus>1) && referBonus<cart.totalPrice?(
+                  referActive && referBonus>1?(
                       <div>
                         <Form.Label style={{color:'red',textAlign:'center'}}>আপনি কি আপনার রেফার বোনাস ব্যবহার করতে চান?</Form.Label>
                         <div style={{textAlign:'center',marginTop:'5px',marginBottom:'10px'}}>
