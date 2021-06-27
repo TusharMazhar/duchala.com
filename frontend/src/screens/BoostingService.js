@@ -29,7 +29,7 @@ const BoostingService = () => {
   return (
     <Card.Body>
       <Card.Text style={{margin:'auto',backgroundColor:'#0B8A55',color:'white',textAlign:'center',padding:'20px'}}>
-        <span>আপনি যদি আপনার ফেসবুক পেজ,ইউটিউন চ্যানেল পরিচিতি বাড়ানোর জন্য বোস্টিং করতে চান, তাহলে আমাদের নিচের ফর্মটি পূরণ করে সাবমিট করুন</span>
+        <span>আপনি যদি আপনার ফেসবুক পেজ,ইউটিউব চ্যানেল পরিচিতি বাড়ানোর জন্য বোস্টিং করতে চান, তাহলে আমাদের নিচের ফর্মটি পূরণ করে সাবমিট করুন</span>
         
       </Card.Text>
     <FormContainer>

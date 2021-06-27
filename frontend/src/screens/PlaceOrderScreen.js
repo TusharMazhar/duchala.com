@@ -7,19 +7,39 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
 import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 import { USER_DETAILS_RESET } from '../constants/userConstants'
-import { get } from 'mongoose'
+// import { get } from 'mongoose'
 import axios from 'axios'
 
-const PlaceOrderScreen = ({ history }) => {
+const PlaceOrderScreen =  ({ history }) => {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
-  console.log('user',userInfo._id )
+
+  
+  const [referActive,setReferActive] = useState('')
+  const [referBonus,setReferBonus] = useState('')
+  const [useReferBonus,setUseReferBonus] = useState('')
+  
+
+
   const dispatch = useDispatch()
   const [userReferId,setUserRefer] = useState('')
 
   const [validReferId,setResult] = useState(true)
   const cart = useSelector((state) => state.cart)
+// method ----------- start
+  const getuserDetailsInformation = async ()=>{
 
+    await axios.get(`/api/users/details/${userInfo._id}`).then((data)=>{
+ 
+      setReferActive(data.data.referActive)
+      setReferBonus(data.data.referActive)
+  
+    }).catch(()=>console.log('error api auth'))
+
+
+  }
+
+  // method ----------- end
   if (!cart.shippingAddress.address) {
     history.push('/shipping')
   } else if (!cart.paymentMethod) {
@@ -29,6 +49,7 @@ const PlaceOrderScreen = ({ history }) => {
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2)
   }
+
 
   cart.itemsPrice = addDecimals(
     cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
@@ -44,7 +65,10 @@ const PlaceOrderScreen = ({ history }) => {
   const orderCreate = useSelector((state) => state.orderCreate)
   const { order, success, error } = orderCreate
 
-
+  // useEffect(()=>{
+  //   getuserDetailsInformation()
+  // },[])
+  getuserDetailsInformation()
   useEffect(() => {
     if (success) {
       history.push(`/order/${order._id}`)
@@ -55,24 +79,39 @@ const PlaceOrderScreen = ({ history }) => {
   }, [history, success])
 
   const placeUserOrder = async ()=>{
-    dispatch(
-      createOrder({
-        orderItems: cart.cartItems,
-        shippingAddress: cart.shippingAddress,
-        paymentMethod: cart.paymentMethod,
-        itemsPrice: cart.itemsPrice,
-        shippingPrice: cart.shippingPrice,
-        taxPrice: cart.taxPrice,
-        totalPrice: cart.totalPrice,
-      })
-    )
+    if(useReferBonus==='yes'){
+      dispatch(
+        createOrder({
+          orderItems: cart.cartItems,
+          shippingAddress: cart.shippingAddress,
+          paymentMethod: cart.paymentMethod,
+          itemsPrice: cart.itemsPrice,
+          shippingPrice: cart.shippingPrice,
+          taxPrice: cart.taxPrice,
+          totalPrice: cart.totalPrice-referBonus,
+        })
+      )
+    }else{
+      dispatch(
+        createOrder({
+          orderItems: cart.cartItems,
+          shippingAddress: cart.shippingAddress,
+          paymentMethod: cart.paymentMethod,
+          itemsPrice: cart.itemsPrice,
+          shippingPrice: cart.shippingPrice,
+          taxPrice: cart.taxPrice,
+          totalPrice: cart.totalPrice,
+        })
+      )
+    }
+    
   }
 
   const placeOrderHandler = async () => {
-    if(userReferId!==''){
+    
+    if(userReferId!=='' && useReferBonus!=='yes'){
       
       const referIdUserId = (userReferId+'USAIRELAND'+userInfo._id)
-      console.log(referIdUserId)
       await axios.get(`/api/user/referId/${referIdUserId}`).then((res)=>{
          if(res.data.active){
           placeUserOrder()
@@ -83,7 +122,18 @@ const PlaceOrderScreen = ({ history }) => {
       
       })
 
-    }else{
+    }else if(useReferBonus==='yes'){
+    
+      const referBonusUse = (referBonus+'BONUSUSAIRELAND'+userInfo._id)
+      await axios.get(`/api/user/referId/${referBonusUse}`).then((res)=>{
+      
+         if(res.data.success){
+          placeUserOrder()
+         } 
+      })
+
+    }
+    else{
       placeUserOrder()
     }
     
@@ -162,27 +212,67 @@ const PlaceOrderScreen = ({ history }) => {
                   <Col>{cart.shippingPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item>
+              {
+                referBonus>0?(
+                  <ListGroup.Item>
+                    <Row style={{color:'red'}}>
+                      <Col>রেফার বোনাস আছে</Col>
+                      <Col>{referBonus} টাকা</Col>
+                    </Row>
+              </ListGroup.Item>
+                ):''
+              }
               {/* <ListGroup.Item>
                 <Row>
                   <Col> ট্যাক্স</Col>
                   <Col>{cart.taxPrice} টাকা</Col>
                 </Row>
               </ListGroup.Item> */}
+              {
+                    referActive && referBonus>1?(
+                      <div>
+                        <Form.Label style={{color:'red',textAlign:'center'}}>আপনি কি আপনার রেফার বোনাস ব্যবহার করতে চান?</Form.Label>
+                        <div style={{textAlign:'center',marginTop:'5px',marginBottom:'10px'}}>
+    
+                          <select
+                            type='useReferBonus'
+                            onChange={(e) => setUseReferBonus(e.target.value)}
+                          >
+                            <option value='novalue'>সিলেক্ট করুন</option>
+                            <option value='yes'>হ্যা</option>
+                            <option value='no'>না</option>
+                          </select>
+    
+                        </div>
+                      </div>
+                    ):''
+                  }
+        
               <ListGroup.Item>
                 <Row>
-                  <Col style={{color:'red'}}>সর্বমোট</Col>
-                  <Col style={{color:'red'}}>{cart.totalPrice} টাকা</Col>
+                  <Col style={{color:'green'}}>সর্বমোট</Col>
+                  {
+                    useReferBonus==='yes'?(
+                      <Col style={{color:'green'}}>{cart.totalPrice-referBonus} টাকা</Col>
+                    ):(
+                      <Col style={{color:'green'}}>{cart.totalPrice} টাকা</Col>
+                    )
+                  }  
                 </Row>
               </ListGroup.Item>
-              <Form.Group controlId='userReferId' style={{marginTop:'5px'}}>
-                <Form.Control
-                  style={{backgroundColor:'black',color:'white'}}
-                  type='userReferId'
-                  placeholder='যদি রেফার আইডি থাকে লিখুন'
-                  value={userReferId}
-                  onChange={(e) => setUserRefer(e.target.value)}
-                ></Form.Control>
-             </Form.Group>
+              {
+                referActive?'':(
+                  <Form.Group controlId='userReferId' style={{marginTop:'5px'}}>
+                  <Form.Control
+                    style={{backgroundColor:'black',color:'white'}}
+                    type='userReferId'
+                    placeholder='যদি রেফার আইডি থাকে লিখুন'
+                    value={userReferId}
+                    onChange={(e) => setUserRefer(e.target.value)}
+                  ></Form.Control>
+               </Form.Group>
+                )
+              }
               {
                 validReferId?'':(
                   <p style={{color:'red',margin:'auto'}}>আপনার সংগ্রহ করা রেফার আইডি সঠিক নয়!!</p>

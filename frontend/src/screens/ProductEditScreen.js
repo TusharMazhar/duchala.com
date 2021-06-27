@@ -41,7 +41,6 @@ const ProductEditScreen = ({ match, history }) => {
       if (!product.name || product._id !== productId) {
         dispatch(listProductDetails(productId))
       } else {
-        console.log('image',image)
         setName(product.name)
         setPrice(product.price)
         setImage(product.image)

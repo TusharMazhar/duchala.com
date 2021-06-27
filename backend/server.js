@@ -36,7 +36,6 @@ app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/service/order', serviceRoutes)
 app.use('/api/service/registration', registrationRoutes)
-
 app.use('/api/user/referId',userReferId)
 
 

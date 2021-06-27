@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+// import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
@@ -17,6 +18,7 @@ const ProductScreen = ({ history, match }) => {
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState('')
 
+
   const dispatch = useDispatch()
 
   const productDetails = useSelector((state) => state.productDetails)
@@ -32,6 +34,7 @@ const ProductScreen = ({ history, match }) => {
     error: errorProductReview,
   } = productReviewCreate
 
+
   useEffect(() => {
     if (successProductReview) {
       setRating(0)
@@ -41,11 +44,12 @@ const ProductScreen = ({ history, match }) => {
       dispatch(listProductDetails(match.params.id))
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
     }
-  }, [dispatch, match, successProductReview])
+  }, [dispatch, match, successProductReview,product._id])
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`)
   }
+
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -84,6 +88,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} রিভিউ`}
                   />
                 </ListGroup.Item>
+        
                 <ListGroup.Item>প্রাইস: {product.price} টাকা</ListGroup.Item>
                 <ListGroup.Item>
                   প্রোডাক্টের বর্ণনা: {product.description}
@@ -93,12 +98,14 @@ const ProductScreen = ({ history, match }) => {
             <Col md={3}>
               <Card>
                 <ListGroup variant='flush'>
+
+              
                   <ListGroup.Item>
                     <Row>
                       <Col>প্রাইস:</Col>
                       <Col>
-                        <strong>{product.price*qty} টাকা</strong>
-                      </Col>
+                          <strong>{product.price*qty} টাকা</strong>
+                        </Col>
                     </Row>
                   </ListGroup.Item>
 
@@ -202,7 +209,8 @@ const ProductScreen = ({ history, match }) => {
                       <Button
                         disabled={loadingProductReview}
                         type='submit'
-                        variant='primary'
+                       
+                        style={{backgroundColor:'#0B8A55'}}
                       >
                         সাবমিট করুন
                       </Button>

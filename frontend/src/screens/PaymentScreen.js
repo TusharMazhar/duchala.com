@@ -33,6 +33,7 @@ const PaymentScreen = ({ history }) => {
           <Form.Label as='legend'>পেমেন্ট অপশন সিলেক্ট করুন</Form.Label>
           <Col>
             <Form.Check
+              readOnly
               type='radio'
               label='ক্যাশ অন ডেলিভারি'
               checked

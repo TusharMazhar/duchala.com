@@ -65,8 +65,17 @@ const registerUser = asyncHandler(async (req, res) => {
 // @desc    Get user profile
 // @route   GET /api/users/profile
 // @access  Private
+const getUserDetails = async (req,res)=>{
+  console.log('id',req.params.id)
+  const user = await User.findById(req.params.id)
+  if(user){
+    res.json(user)
+  }
+}
+
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id)
+
 
   if (user) {
     res.json({
@@ -180,6 +189,7 @@ const updateUser = asyncHandler(async (req, res) => {
       name: updatedUser.name,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
+      
     })
   } else {
     res.status(404)
@@ -196,4 +206,5 @@ export {
   deleteUser,
   getUserById,
   updateUser,
+  getUserDetails
 }

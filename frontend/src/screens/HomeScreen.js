@@ -32,7 +32,7 @@ const HomeScreen = ({ match,history }) => {
     if(category!==''){
       history.push(`/search/${category}`)
     }
-  }, [category])
+  }, [category,history])
 
   const handleCategory=(name)=>{
     setCategory(name)
@@ -45,7 +45,7 @@ const HomeScreen = ({ match,history }) => {
           <h5 style={{color:'white',fontWeight:'bold',paddingTop:'30px'}}>আমাদের সেবাসমূহ</h5>
         </div>
         <div style={{marginBottom:'20px',marginLeft:'14px',paddingRight:'0px',paddingLeft:'0px'}}>
-          <Row style={{paddingRight:'15px',paddingLeft:'5px'}}>
+          <Row style={{paddingRight:'15px',paddingLeft:'6px'}}>
             <Col style={{marginBottom:'5px',paddingRight:'0px',paddingLeft:'0px'}}>
               <Link to={`/service/doctor/order`}>
                 <Card className="service">
