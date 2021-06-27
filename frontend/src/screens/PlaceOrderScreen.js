@@ -32,7 +32,7 @@ const PlaceOrderScreen =  ({ history }) => {
     await axios.get(`/api/users/details/${userInfo._id}`).then((data)=>{
  
       setReferActive(data.data.referActive)
-      setReferBonus(data.data.referActive)
+      setReferBonus(data.data.referBonus)
   
     }).catch(()=>console.log('error api auth'))
 
