@@ -50,7 +50,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link >
-                    <i className='fas fa-user' ></i><span style={{color:'#0B8A55',fontSize:'15px'}}>লগিন করুন</span>
+                    <i className='fas fa-user' ></i><span style={{color:'#0B8A55',fontSize:'15px'}}>লগ ইন করুন</span>
                   </Nav.Link>
                 </LinkContainer>
               )}

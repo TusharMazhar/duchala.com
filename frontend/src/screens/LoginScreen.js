@@ -56,7 +56,7 @@ const LoginScreen = ({ location, history }) => {
         </Form.Group>
 
         <Button type='submit' variant='primary' style={{backgroundColor:'#0B8A55'}}>
-           লগিন করুন
+           লগ ইন করুন
         </Button>
       </Form>
 

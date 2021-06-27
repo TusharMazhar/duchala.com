@@ -169,7 +169,7 @@ const OrderScreen = ({ match, history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>অর্ডার সামারি</h2>
+                <h2>অর্ডার বিবরণ</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>

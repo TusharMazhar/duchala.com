@@ -103,7 +103,7 @@ const RegisterScreen = ({ location, history }) => {
         <Col>
           আপনার কি একাউন্ট আছে?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} style={{fontWeight:'bold'}}>
-            লগিন করুন
+            লগ ইন করুন
           </Link>
         </Col>
       </Row>

@@ -199,7 +199,7 @@ const PlaceOrderScreen =  ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>অর্ডার সামারি</h2>
+                <h2>অর্ডার বিবরণ</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
@@ -290,6 +290,9 @@ const PlaceOrderScreen =  ({ history }) => {
               <ListGroup.Item>
                 {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
+              {cart.totalPrice<500?(
+                <p style={{color:'red',margin:'5px',textAlign:'center',fontWeight:'bold',fontSize:'20px'}}>মিনিমাম ৫০০ টাকার বাজার করতে হবে</p>
+              ):''}
               <ListGroup.Item>
                 <Button
                   style={{backgroundColor:'#0B8A55'}}
@@ -305,12 +308,7 @@ const PlaceOrderScreen =  ({ history }) => {
               <Link className='btn btn-light' style={{backgroundColor:'#0B8A55',marginLeft:'6px',color:'white'}} to='/'>
                   হোম পেজ
                 </Link>
-              </ListGroup.Item>
-              
-              {cart.totalPrice<500?(
-                <p style={{color:'red',margin:'5px',textAlign:'center',fontWeight:'bold',fontSize:'20px'}}>Minimum order 500 Taka</p>
-              ):''}
-              
+              </ListGroup.Item> 
             </ListGroup>
           </Card>
         </Col>
