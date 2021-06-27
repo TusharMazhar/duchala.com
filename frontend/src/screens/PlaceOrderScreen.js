@@ -213,7 +213,7 @@ const PlaceOrderScreen =  ({ history }) => {
                 </Row>
               </ListGroup.Item>
               {
-                referBonus>0?(
+                referBonus>1?(
                   <ListGroup.Item>
                     <Row style={{color:'red'}}>
                       <Col>রেফার বোনাস আছে</Col>
@@ -229,7 +229,7 @@ const PlaceOrderScreen =  ({ history }) => {
                 </Row>
               </ListGroup.Item> */}
               {
-                    referActive && referBonus>1?(
+                    referActive && referBonus>0.5?(
                       <div>
                         <Form.Label style={{color:'red',textAlign:'center'}}>আপনি কি আপনার রেফার বোনাস ব্যবহার করতে চান?</Form.Label>
                         <div style={{textAlign:'center',marginTop:'5px',marginBottom:'10px'}}>
