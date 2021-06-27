@@ -3,6 +3,7 @@ import User from '../models/userModel.js'
 const getUserReferId = async (req,res)=>{
 
     const [referId,userId] = req.params.id.split('USAIRELAND')
+    const[a,percentageBonus] = userId.split('IRELANDUSA')
     const [referBonus,referUser] = req.params.id.split('BONUSUSAIRELAND')
     const users= await User.find()
     const s =users.filter(item=> item.referId===referId)
@@ -39,7 +40,7 @@ const getUserReferId = async (req,res)=>{
             s[0].isAdmin = s[0].isAdmin
             s[0].referId = s[0].referId
             s[0].referActive = s[0].referActive
-            s[0].referBonus = s[0].referBonus + 20
+            s[0].referBonus = s[0].referBonus + percentageBonus
      
             await s[0].save().then(async ()=>{
               const user = await User.findById(userId)
