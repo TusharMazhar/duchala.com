@@ -81,7 +81,7 @@ const ServiceRegisterList = ({history}) => {
                             </Card.Body>
                             <div className="ml-4 mr-2 ">
                                 <Card.Text ><span style={{color:'black'}}>Mobile:</span><span className="text-success"> {service.phone}</span></Card.Text>
-                                <Card.Text><span style={{color:'black'}}>Profession:</span><span className="text-success"> {service.category}</span></Card.Text>
+                                <Card.Text><span style={{color:'black'}}>Need:</span><span className="text-success"> {service.category}</span></Card.Text>
                                 <Card.Text><span style={{color:'black'}}>Address:</span><span className="text-success"> {service.location}</span></Card.Text>
                                 <Card.Text><span style={{color:'black'}}>Description:</span><span className="text-success"> {service.description}</span></Card.Text>
                             </div>

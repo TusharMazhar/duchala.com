@@ -73,7 +73,7 @@ const ServiceRegisterList = ({history}) => {
                  serviceOrderList.length>0?(
                     <Row style={{marginBottom:'20px'}}>
                     {serviceOrderList.map((service) => (
-                    <Col key={service._id} xs={12} sm={6} md={6} lg={4} xl={3} style={{width:'300px'}}>
+                    <Col key={service._id} xs={12} sm={6} md={6} lg={4} xl={3}>
                         <Card style={{margin:'5px',marginLeft:'10px',border:'1px solid #0B8A55',color:'white'}}>
                             
                             <Card.Body>
