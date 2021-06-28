@@ -214,7 +214,7 @@ const HomeScreen = ({ match,history }) => {
             ))}
             {
               products.length===0?(
-                <h1 style={{color:'red',textAlign:'center',margin:'auto'}}>কোন পণ্য নাই</h1>
+                <h1 style={{color:'red',textAlign:'center',margin:'auto'}}>কোন পণ্য নাই/সার্চ সঠিকভাবে করুন</h1>
               ):''
             }
           </Row>
