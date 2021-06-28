@@ -61,7 +61,7 @@ const ServiceRegisterList = ({history}) => {
             <option value='all'>All</option>
             <option value='doctor'>Doctor</option>
             <option value="medicine">Medicine</option>
-            <option value='cook'>Cook</option>
+            {/* <option value='cook'>Cook</option> */}
             <option value='car'>Car</option>
             <option value='ambulance'>Ambulance</option>
             <option value='electrician'>Electrician</option>
@@ -85,7 +85,7 @@ const ServiceRegisterList = ({history}) => {
                  serviceOrderList.length>0?(
                     <Row style={{marginBottom:'20px'}}>
                     {serviceOrderList.map((service) => (
-                    <Col key={service._id} xs={12} sm={6} md={6} lg={4} xl={3}>
+                    <Col key={service._id} xs={12} sm={6} md={6} lg={6} xl={6} >
                         <Card style={{margin:'5px',marginLeft:'10px',border:'1px solid #0B8A55',color:'white'}}>
                             
                             <Card.Body>
