@@ -1,6 +1,5 @@
-import Axios from 'axios'
 import React,{useEffect,useState}from 'react'
-import { Row, Col, Card ,Container} from 'react-bootstrap'
+import { Row, Col, Card } from 'react-bootstrap'
 import {  useSelector } from 'react-redux'
 import axios from 'axios'
 
@@ -10,14 +9,15 @@ const ServiceRegisterList = ({history}) => {
     const { userInfo } = userLogin
     const [serviceOrderList,setServiceOrderList] = useState([])
 
-    const config = {
+    
+
+    useEffect(() => {
+      const config = {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${userInfo.token}`,
         },
       }
-
-    useEffect(() => {
         const serviceOrder = async ()=>{
            const res = await axios.get('/api/service/registration/adminduchala',config)
            const data = await res.data
@@ -25,7 +25,7 @@ const ServiceRegisterList = ({history}) => {
           
         }
         serviceOrder()
-     },[]);
+     },[userInfo]);
 
 
   
@@ -33,7 +33,7 @@ const ServiceRegisterList = ({history}) => {
         if (!userInfo || !userInfo.isAdmin) {
             history.push('/login')
         }
-    },[userInfo])
+    },[userInfo,history])
 
     return (
         <> 

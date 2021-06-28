@@ -13,15 +13,16 @@ const SearchBox = ({ history }) => {
     }
   }
 
-  const typeSearch = (e) => {
-    if (keyword.trim()) {
-      history.push(`/search/${keyword}`)
-    } 
-  }
+  
  
   useEffect(()=>{
+    const typeSearch = (e) => {
+      if (keyword.trim()) {
+        history.push(`/search/${keyword}`)
+      } 
+    }
     typeSearch()
-  },[keyword])
+  },[keyword,history])
 
 
   return (
