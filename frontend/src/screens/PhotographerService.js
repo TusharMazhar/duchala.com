@@ -8,7 +8,7 @@ const PhotographerService = () => {
     let history = useHistory()
     const [name,setName] = useState('')
     const [phone,setPhone] = useState('')
-    const category = 'Photographer'
+    const category = 'photographer'
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
   

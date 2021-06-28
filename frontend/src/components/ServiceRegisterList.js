@@ -8,6 +8,21 @@ const ServiceRegisterList = ({history}) => {
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
     const [serviceOrderList,setServiceOrderList] = useState([])
+    const [serviceOrderList2,setServiceOrderList2] = useState([])
+
+
+    useEffect(()=>{
+
+       if(category==='all'){
+        setServiceOrderList(serviceOrderList2)
+       }else{
+         const updatedArr = serviceOrderList2.filter(item=>{
+           return item.category===category
+         })
+         setServiceOrderList(updatedArr)
+       }
+
+    },[category])
 
     useEffect(() => {
       const config = {
@@ -20,6 +35,7 @@ const ServiceRegisterList = ({history}) => {
            const res = await axios.get('/api/service/registration/adminduchala',config)
            const data = await res.data
            setServiceOrderList(data)  
+           setServiceOrderList2(data)  
           
         }
         serviceOrder()
@@ -55,7 +71,7 @@ const ServiceRegisterList = ({history}) => {
             <option value='van_driver'>Van Driver</option>
             <option value='flat_sell'>Flat sell</option>
             <option value='photographer'>Photographer</option>
-            <option value='technician'>technician</option>
+            <option value='technician'>Technician</option>
             <option value='plumber'>Plumber</option>
             <option value='teacher'>Teacher</option>
             <option value='repairer'>Repairer</option>

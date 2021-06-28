@@ -8,7 +8,7 @@ const FlatService = () => {
     let history = useHistory()
     const [name,setName] = useState('')
     const [phone,setPhone] = useState('')
-    const category = 'Flat Rent'
+    const category = 'flat_rent'
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
   

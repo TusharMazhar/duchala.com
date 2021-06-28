@@ -8,7 +8,7 @@ const BoostingService = () => {
     let history = useHistory()
     const [name,setName] = useState('')
     const [phone,setPhone] = useState('')
-    const category = 'Boosting'
+    const category = 'boosting'
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
   

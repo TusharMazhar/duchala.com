@@ -4,12 +4,25 @@ import {  useSelector } from 'react-redux'
 import axios from 'axios'
 
 const ServiceRegisterList = ({history}) => {
-    const [category,setCategory] = useState('all')
+    const [category,setCategory] = useState('')
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
     const [serviceOrderList,setServiceOrderList] = useState([])
+    const [serviceOrderList2,setServiceOrderList2] = useState([])
 
-  
+
+    useEffect(()=>{
+       console.log(category)
+       if(category==='all'){
+        setServiceOrderList(serviceOrderList2)
+       }else{
+         const updatedArr = serviceOrderList2.filter(item=>{
+           return item.category===category
+         })
+         setServiceOrderList(updatedArr)
+       }
+
+    },[category])
 
     useEffect(() => {
       const config = {
@@ -22,6 +35,7 @@ const ServiceRegisterList = ({history}) => {
            const res = await axios.get('/api/service/order/adminduchala',config)
            const data = await res.data
            setServiceOrderList(data)  
+           setServiceOrderList2(data)  
           
         }
         serviceOrder()
@@ -45,24 +59,22 @@ const ServiceRegisterList = ({history}) => {
              onChange={(e) => setCategory(e.target.value)}
           >
             <option value='all'>All</option>
-            <option value='other_profession'>Other Profession</option>
             <option value='doctor'>Doctor</option>
-            <option value="medicine_shop">Medicine shop</option>
+            <option value="medicine">Medicine</option>
             <option value='cook'>Cook</option>
-            <option value='car_driver'>Car Driver</option>
-            <option value='ambulance_driver'>Ambulance Driver</option>
+            <option value='car'>Car</option>
+            <option value='ambulance'>Ambulance</option>
             <option value='electrician'>Electrician</option>
             <option value='designer'>Designer</option>
-            <option value='cng_driver'>CNG Driver</option>
-            <option value='van_driver'>Van Driver</option>
-            <option value='flat_sell'>Flat sell</option>
+            <option value='cng'>CNG</option>
+            <option value='van'>Van</option>
+            <option value='flat_rent'>Flat Rent</option>
             <option value='photographer'>Photographer</option>
-            <option value='technician'>technician</option>
+            <option value='technician'>Technician</option>
             <option value='plumber'>Plumber</option>
             <option value='teacher'>Teacher</option>
             <option value='repairer'>Repairer</option>
             <option value='tiles_mechanic'>Tiles Mechanic</option>
-            <option value='other_shop'>Other shop</option>
 
           </select>
         </div>
@@ -73,7 +85,7 @@ const ServiceRegisterList = ({history}) => {
                  serviceOrderList.length>0?(
                     <Row style={{marginBottom:'20px'}}>
                     {serviceOrderList.map((service) => (
-                    <Col key={service._id} xs={12} sm={6} md={6} lg={4} xl={3} >
+                    <Col key={service._id} xs={12} sm={6} md={6} lg={4} xl={3}>
                         <Card style={{margin:'5px',marginLeft:'10px',border:'1px solid #0B8A55',color:'white'}}>
                             
                             <Card.Body>

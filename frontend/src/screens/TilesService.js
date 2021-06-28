@@ -8,7 +8,7 @@ const TilesService = () => {
     let history = useHistory()
     const [name,setName] = useState('')
     const [phone,setPhone] = useState('')
-    const category = 'Tiles Mechanic'
+    const category = 'tiles_mechanic'
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
   

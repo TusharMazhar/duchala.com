@@ -8,7 +8,7 @@ const PlumberService = () => {
     let history = useHistory()
     const [name,setName] = useState('')
     const [phone,setPhone] = useState('')
-    const category = 'Plumber'
+    const category = 'plumber'
     const [location,setLocation] = useState('')
     const [description,setDescription] = useState('')
   

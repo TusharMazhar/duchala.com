@@ -72,7 +72,7 @@ const ServiceRegisterScreen = () => {
             <option value='designer'>Designer</option>
             <option value='cng_driver'>CNG Driver</option>
             <option value='van_driver'>Van Driver</option>
-            <option value='flat_sell'>Flat sell</option>
+            <option value='flat_rent'>Flat sell</option>
             <option value='photographer'>Photographer</option>
             <option value='technician'>technician</option>
             <option value='plumber'>Plumber</option>
