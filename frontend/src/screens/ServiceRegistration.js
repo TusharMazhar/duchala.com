@@ -62,23 +62,24 @@ const ServiceRegisterScreen = () => {
              type='category'
              onChange={(e) => setCategory(e.target.value)}
           >
-            <option value='technician'>Other Profession</option>
+            <option value='other_profession'>Other Profession</option>
             <option value='doctor'>Doctor</option>
-            <option value="electrician">Medicine shop</option>
-            <option value='technician'>Cook</option>
-            <option value='technician'>Car Driver</option>
-            <option value='technician'>Ambulance Driver</option>
-            <option value='technician'>Electrician</option>
-            <option value='technician'>Designer</option>
-            <option value='technician'>CNG Driver</option>
-            <option value='technician'>Van Driver</option>
-            <option value='technician'>Flat sell</option>
-            <option value='technician'>Photographer</option>
-            <option value='technician'>Plumber</option>
-            <option value='technician'>Teacher</option>
-            <option value='technician'>Repairer</option>
-            <option value='technician'>Tiles Mechanic</option>
-            <option value='technician'>Other shop</option>
+            <option value="medicine_shop">Medicine shop</option>
+            <option value='cook'>Cook</option>
+            <option value='car_driver'>Car Driver</option>
+            <option value='ambulance_driver'>Ambulance Driver</option>
+            <option value='electrician'>Electrician</option>
+            <option value='designer'>Designer</option>
+            <option value='cng_driver'>CNG Driver</option>
+            <option value='van_driver'>Van Driver</option>
+            <option value='flat_sell'>Flat sell</option>
+            <option value='photographer'>Photographer</option>
+            <option value='technician'>technician</option>
+            <option value='plumber'>Plumber</option>
+            <option value='teacher'>Teacher</option>
+            <option value='repairer'>Repairer</option>
+            <option value='tiles_mechanic'>Tiles Mechanic</option>
+            <option value='other_shop'>Other shop</option>
           </select>
 
         </div>
