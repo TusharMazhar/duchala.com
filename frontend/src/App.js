@@ -4,6 +4,8 @@ import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/About'
+import ServiceOrderList from './components/ServiceOrderList'
+import ServiceRegisterList from './components/ServiceRegisterList'
 import ConfirmRegistration from './components/ConfirmRegistration'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
@@ -65,6 +67,8 @@ const App = () => {
           <Route exact path='/workers/registration/confirm' component={ConfirmRegistration} />
           <Route exact path='/workers/registration' component={ServiceRegistration} />
           <Route exact path='/about' component={About} />
+          <Route exact path='/admin/service-order-list' component={ServiceOrderList} />
+          <Route exact path='/admin/service-register-list' component={ServiceRegisterList} />
           <Route exact path='/order/:id' component={OrderScreen} />
           <Route exact path='/shipping' component={ShippingScreen} />
           <Route exact path='/payment' component={PaymentScreen} />
@@ -86,8 +90,8 @@ const App = () => {
             component={ProductListScreen}
             exact
           />
-          <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-          <Route path='/admin/orderlist' component={OrderListScreen} />
+          <Route path='/admin/product/:id/edit' component={ProductEditScreen} exact />
+          <Route path='/admin/orderlist' component={OrderListScreen} exact />
           <Route path='/search/:keyword' component={HomeScreen} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />
           <Route

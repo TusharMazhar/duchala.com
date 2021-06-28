@@ -111,7 +111,7 @@ const PlaceOrderScreen =  ({ history }) => {
     
     if(userReferId!=='' && useReferBonus!=='yes'){
       
-      const bonusPercentage = (cart.totalPrice*2)/100
+      const bonusPercentage = (cart.totalPrice*1)/100
       const referIdUserId = (userReferId+'USAIRELAND'+userInfo._id+'IRELANDUSA'+bonusPercentage)
       await axios.get(`/api/user/referId/${referIdUserId}`).then((res)=>{
          if(res.data.active){

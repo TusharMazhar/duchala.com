@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
 const SearchBox = ({ history }) => {
   const [keyword, setKeyword] = useState('')
-
+ 
   const submitHandler = (e) => {
     e.preventDefault()
     if (keyword.trim()) {
@@ -12,6 +12,19 @@ const SearchBox = ({ history }) => {
       history.push('/')
     }
   }
+
+  const typeSearch = (e) => {
+    if (keyword.trim()) {
+      history.push(`/search/${keyword}`)
+    } else {
+      history.push('/')
+    }
+  }
+ 
+  useEffect(()=>{
+    typeSearch()
+  },[keyword])
+
 
   return (
     <Form onSubmit={submitHandler} inline >
