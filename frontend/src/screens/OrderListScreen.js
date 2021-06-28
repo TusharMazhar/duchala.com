@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,10 +8,9 @@ import { listOrders } from '../actions/orderActions'
 
 const OrderListScreen = ({ history }) => {
   const dispatch = useDispatch()
-
+  // const [totalOrder,setOrders] = useState()
   const orderList = useSelector((state) => state.orderList)
   const { loading, error, orders } = orderList
-
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
@@ -25,7 +24,7 @@ const OrderListScreen = ({ history }) => {
 
   return (
     <>
-      <h1>Orders</h1>
+      <h1>সর্বমোট অর্ডার আছে</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -49,7 +48,7 @@ const OrderListScreen = ({ history }) => {
                 <td>{order._id}</td>
                 <td>{order.user && order.user.name}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
-                <td>${order.totalPrice}</td>
+                <td>৳{order.totalPrice}</td>
                 <td>
                   {order.isDelivered ? (
                     'Paid'
