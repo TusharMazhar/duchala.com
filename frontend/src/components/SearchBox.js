@@ -16,7 +16,7 @@ const SearchBox = ({ history }) => {
   
  
   useEffect(()=>{
-    const typeSearch = (e) => {
+    const typeSearch = () => {
       if (keyword.trim()) {
         history.push(`/search/${keyword}`)
       } 

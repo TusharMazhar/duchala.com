@@ -212,6 +212,11 @@ const HomeScreen = ({ match,history }) => {
                 <Product product={product} />
               </Col>
             ))}
+            {
+              products.length===0?(
+                <h1 style={{color:'red',textAlign:'center',margin:'auto'}}>কোন পণ্য নাই</h1>
+              ):''
+            }
           </Row>
           <Paginate
             pages={pages}

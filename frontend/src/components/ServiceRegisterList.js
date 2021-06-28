@@ -4,12 +4,10 @@ import {  useSelector } from 'react-redux'
 import axios from 'axios'
 
 const ServiceRegisterList = ({history}) => {
-    const [category,setCategory] = useState('all')
+    const [category,setCategory] = useState('')
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
     const [serviceOrderList,setServiceOrderList] = useState([])
-
-    
 
     useEffect(() => {
       const config = {

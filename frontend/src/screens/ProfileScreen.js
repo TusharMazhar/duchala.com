@@ -138,7 +138,7 @@ const ProfileScreen = ({  history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type='submit' style={{backgroundColor:'#0B8A55'}} >
+            <Button type='submit' style={{backgroundColor:'#0B8A55',marginBottom:'20px'}} >
               Update
             </Button>
           </Form>
