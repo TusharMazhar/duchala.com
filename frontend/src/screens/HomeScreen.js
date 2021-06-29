@@ -173,7 +173,7 @@ const HomeScreen = ({ match,history }) => {
           </Row>
           <div style={{textAlign:'center',paddingBottom:'30px'}}>
             <Link to={`/workers/registration`} style={{textAlign:'center'}} ><Button className="workers" >কর্মী রেজিষ্টেশন</Button></Link>
-            <Link to={`user/request/option`} style={{textAlign:'center'}} ><Button className="workers" >রিকোয়েষ্ট অপশন</Button>  </Link>
+            <Link to={`user/request/option`} style={{textAlign:'center'}} ><Button className="workers" >অন্য কিছু?</Button></Link>
           </div>
       </div>
       </div>
@@ -186,6 +186,7 @@ const HomeScreen = ({ match,history }) => {
           <Col className="category" onClick={()=>handleCategory('fish')}>মাছ</Col>
           <Col className="category" onClick={()=>handleCategory('meat')}>মাংস</Col>
           <Col className="category" onClick={()=>handleCategory('grocery')}>মুদি পণ্য</Col>
+          <Col className="category" onClick={()=>handleCategory('girls')}>মেয়েদের পণ্য</Col>
         </Row>
       
       </div>

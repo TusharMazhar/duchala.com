@@ -16,7 +16,7 @@ const Product = ({ product }) => {
       <Card.Img src={product.image} variant='top' height="200px"/>
       <Card.Body>
           <Card.Title as='div' >
-            <strong>{product.name.substr(0,14)}</strong>
+            <strong>{product.name.substr(0,40)}</strong>
           </Card.Title>
         <Card.Text as='div'>
           <Rating
@@ -25,7 +25,7 @@ const Product = ({ product }) => {
           />
         </Card.Text>
 
-        <Card.Text as='h5' style={{marginTop:'5px'}}>{product.price} টাকা/কেজি</Card.Text>
+        <Card.Text as='h5' style={{marginTop:'5px'}}>{product.price} টাকা</Card.Text>
         <div style={{textAlign:'center'}}>
         <Link to={`/product/${product._id}`}>
           <Button  className="product">
