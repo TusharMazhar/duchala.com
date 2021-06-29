@@ -7,7 +7,9 @@ import About from './components/About'
 import ServiceOrderList from './components/ServiceOrderList'
 import ServiceRegisterList from './components/ServiceRegisterList'
 import ConfirmRegistration from './components/ConfirmRegistration'
+import RequestConfirm from './components/RequestConfirm'
 import HomeScreen from './screens/HomeScreen'
+import RequestOption from './screens/RequestOption'
 import ProductScreen from './screens/ProductScreen'
 import CartScreen from './screens/CartScreen'
 import LoginScreen from './screens/LoginScreen'
@@ -65,7 +67,9 @@ const App = () => {
           <Route exact path='/service/doctor/order' component={DoctorService} />
           <Route exact path='/service/order/confirm' component={ConfirmServiceOrder} />
           <Route exact path='/workers/registration/confirm' component={ConfirmRegistration} />
+          <Route exact path='/user/request/confirm' component={RequestConfirm} />
           <Route exact path='/workers/registration' component={ServiceRegistration} />
+          <Route exact path='/user/request/option' component={RequestOption} />
           <Route exact path='/about' component={About} />
           <Route exact path='/admin/service-order-list' component={ServiceOrderList} />
           <Route exact path='/admin/service-register-list' component={ServiceRegisterList} />

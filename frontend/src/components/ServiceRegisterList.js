@@ -70,6 +70,7 @@ const ServiceRegisterList = ({history}) => {
             <option value='cng_driver'>CNG Driver</option>
             <option value='van_driver'>Van Driver</option>
             <option value='flat_sell'>Flat sell</option>
+            <option value='request'>User Request</option>
             <option value='photographer'>Photographer</option>
             <option value='technician'>Technician</option>
             <option value='plumber'>Plumber</option>
