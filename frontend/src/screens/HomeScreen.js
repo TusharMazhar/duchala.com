@@ -173,7 +173,7 @@ const HomeScreen = ({ match,history }) => {
           </Row>
           <div style={{textAlign:'center',paddingBottom:'30px'}}>
             <Link to={`/workers/registration`} style={{textAlign:'center'}} ><Button className="workers" >কর্মী রেজিষ্টেশন</Button></Link>
-            <Link to={`user/request/option`} style={{textAlign:'center'}} ><Button className="workers" >রিকোয়েস্ট অপশন</Button>  </Link>
+            <Link to={`user/request/option`} style={{textAlign:'center'}} ><Button className="workers" >রিকোয়েষ্ট অপশন</Button>  </Link>
           </div>
       </div>
       </div>

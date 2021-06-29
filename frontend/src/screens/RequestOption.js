@@ -31,7 +31,7 @@ const ServiceRegisterScreen = () => {
         <span>আপনার জন্য কোন পণ্য এনে দেওয়া লাগবে বা আমাদের প্রতি আপনি কোন পরামর্শ দিতে চান আথবা আমাদের সার্ভিস নিয়ে ভাল/খারাপ কোন মতামত দিতে চান। তাহলে নিচের ফর্মটি পূরণ করে সাবমিট করুন</span>
       </Card.Text>
     <FormContainer width="522px">
-      <h1 style={{color:'#0B8A55',textAlign:'center'}}>রিকোয়েস্ট/মতামত দিন</h1>
+      <h1 style={{color:'#0B8A55',textAlign:'center'}}>রিকোয়েষ্ট/মতামত দিন</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
           <Form.Label>আপনার নাম</Form.Label>
@@ -67,7 +67,7 @@ const ServiceRegisterScreen = () => {
           <textarea
             style={{width:'300px',height:'100px',paddingLeft:'20px',paddingTop:'10px'}}
             type='description'
-            placeholder='আপনি আমাদের কাছে কোন প্রোডাক্ট এনে দেওয়ার রিকোয়েস্ট করতে চান নাকি আমাদের জন্য কোন পরামর্শ দিতে চান? লিখুন এখানে...'
+            placeholder='আপনি আমাদের কাছে কোন প্রোডাক্ট এনে দেওয়ার রিকোয়েষ্ট করতে চান নাকি আমাদের জন্য কোন পরামর্শ দিতে চান? লিখুন এখানে...'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>

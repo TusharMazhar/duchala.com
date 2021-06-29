@@ -94,12 +94,28 @@ const ServiceRegisterList = ({history}) => {
                             <Card.Body>
                                 <Card.Title className="text-center font-weight-bold text-light bg-dark">{service.name}</Card.Title>
                             </Card.Body>
-                            <div className="ml-4 mr-2 ">
+                            {
+                              service.category==='request'?(
+
+                              <div className="ml-4 mr-2 bg-dark">
+                                <Card.Text ><span style={{color:'white'}}>Mobile:</span><span className="text-success"> {service.phone}</span></Card.Text>
+                                <Card.Text><span style={{color:'white'}}>Request/Opinion:</span><span className="text-success"> {service.category}</span></Card.Text>
+                                <Card.Text><span style={{color:'white'}}>Address:</span><span className="text-success"> {service.location}</span></Card.Text>
+                                <Card.Text><span style={{color:'white'}}>Description:</span><span className="text-success"> {service.description}</span></Card.Text>
+                              </div>
+
+                              ):(
+
+                              <div className="ml-4 mr-2 ">
                                 <Card.Text ><span style={{color:'black'}}>Mobile:</span><span className="text-success"> {service.phone}</span></Card.Text>
                                 <Card.Text><span style={{color:'black'}}>Profession:</span><span className="text-success"> {service.category}</span></Card.Text>
                                 <Card.Text><span style={{color:'black'}}>Address:</span><span className="text-success"> {service.location}</span></Card.Text>
                                 <Card.Text><span style={{color:'black'}}>Description:</span><span className="text-success"> {service.description}</span></Card.Text>
-                            </div>
+                              </div>
+
+                              )
+                            }
+                            
                 `
                             </Card>
                         </Col>
