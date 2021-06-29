@@ -97,7 +97,7 @@ const ServiceRegisterList = ({history}) => {
                             {
                               service.category==='request'?(
 
-                              <div className="ml-4 mr-2 bg-dark">
+                              <div className="ml-4 mr-2 bg-dark p-4">
                                 <Card.Text ><span style={{color:'white'}}>Mobile:</span><span className="text-success"> {service.phone}</span></Card.Text>
                                 <Card.Text><span style={{color:'white'}}>Request/Opinion:</span><span className="text-success"> {service.category}</span></Card.Text>
                                 <Card.Text><span style={{color:'white'}}>Address:</span><span className="text-success"> {service.location}</span></Card.Text>
