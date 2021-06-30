@@ -1,6 +1,6 @@
 import React, { useEffect ,useState} from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card,Form } from 'react-bootstrap'
+import { Button, Row, Col, ListGroup, Image, Card,Form ,Modal} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
@@ -18,6 +18,11 @@ const PlaceOrderScreen =  ({ history }) => {
   const [referActive,setReferActive] = useState('')
   const [referBonus,setReferBonus] = useState('')
   const [useReferBonus,setUseReferBonus] = useState('')
+ 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   
 
 
@@ -107,6 +112,10 @@ const PlaceOrderScreen =  ({ history }) => {
     
   }
 
+  const dialogShow = ()=>{
+    setShow(true)
+  }
+
   const placeOrderHandler = async () => {
     
     if(userReferId!=='' && useReferBonus!=='yes'){
@@ -142,6 +151,23 @@ const PlaceOrderScreen =  ({ history }) => {
 
   return (
     <>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{color:'#0B8A55'}}>অর্ডার করার পুর্বে জেনে নিন</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{color:'red'}}>
+          আপনি যেদিন অর্ডার করবেন, আমরা সেই পণ্যগুলো পরের দিন সকাল(৭টা থেকে - ১১টার মধ্যে) আপনার বাসাই একদম ফ্রেশ/সতেজ মাছ,মাংস,শাক-সবজি,মুদি পণ্য বা অন্যান্য পণ্যগুলো পৌছে দিব। আমরা বাজার থেকে অনেক কম মূল্যে এবং ১০০% ফ্রেশ পণ্য আপনাদের বাসাই পৌছে দেওয়ার অঙ্গীকার করছি।
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Link className='btn btn-light my-3' style={{backgroundColor:'#0B8A55',color:'white'}} to='/'>
+             হোম পেজ
+          </Link>
+          <Button style={{backgroundColor:'#0B8A55',color:'white'}}  onClick={placeOrderHandler}>
+             অর্ডার করুন
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
@@ -299,7 +325,7 @@ const PlaceOrderScreen =  ({ history }) => {
                   type='button'
                   className='btn-block'
                   disabled={cart.totalPrice<500 || (referBonus>cart.totalPrice)}
-                  onClick={placeOrderHandler}
+                  onClick={dialogShow}
                 >
                   অর্ডার করুন
                 </Button>
