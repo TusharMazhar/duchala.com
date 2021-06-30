@@ -33,34 +33,31 @@ const addOrderItems = asyncHandler(async (req, res) => {
     })
 
     const createdOrder = await order.save().then(()=>{
-      try{
-          const msg = {
-            to: 'duchala.com@gmail.com',
-            from: 'tusharmazhar7499@gmail.com',
-            subject: 'Product Order',
-            text:{
-              "items": req.body.orderItems,
-              "price": req.body.totalPrice,
-              "address": req.body.shippingAddress
+          try{
+            const msg = {
+              to: 'duchala.com@gmail.com',
+              from: 'tusharmazhar7499@gmail.com',
+              subject: 'Product Order',
+              text:{
+                "items": req.body.orderItems,
+                "price": req.body.totalPrice,
+                "address": req.body.shippingAddress
+              }
             }
-          }
     
-          sgMail.send(msg,(err,info)=>{
-            if(err){
-              console.log('mail not send')
-            }else{
-              console.log('mail sent')
-            }
-          })
+            sgMail.send(msg,(err,info)=>{
+              if(err){
+                console.log('mail not send')
+              }else{
+                console.log('mail sent')
+              }
+            })
 
-      }catch(err){
-        console.log(err)
-      }
-
+          }catch(err){
+            console.log(err)
+          }
+       })
     res.status(201).json(createdOrder)
-  
-
-    })
 
     
   }
