@@ -1,6 +1,7 @@
 import asyncHandler from 'express-async-handler'
 import Order from '../models/orderModel.js'
-
+import sgMail from '@sendgrid/mail'
+sgMail.setApiKey('')
 // @desc    Create new order
 // @route   POST /api/orders
 // @access  Private
@@ -31,9 +32,33 @@ const addOrderItems = asyncHandler(async (req, res) => {
       totalPrice,
     })
 
-    const createdOrder = await order.save()
+    const createdOrder = await order.save().then(()=>{
+      res.status(201).json(createdOrder)
 
-    res.status(201).json(createdOrder)
+      const msg = {
+        to: 'duchala.com@gmail.com',
+        from: 'tusharmazhar7499@gmail.com',
+        subject: 'Product Order',
+        text:{
+          "items": req.body.orderItems,
+          "price": req.body.totalPrice,
+          "address": req.body.shippingAddress
+        }
+      }
+
+      sgMail.send(msg,(err,info)=>{
+        if(err){
+          console.log('mail not send')
+        }else{
+          console.log('mail sent')
+        }
+      })
+       
+  
+
+    })
+
+    
   }
 })
 
