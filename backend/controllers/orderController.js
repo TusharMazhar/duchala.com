@@ -48,17 +48,14 @@ const addOrderItems = asyncHandler(async (req, res) => {
           from:'tusharmazhar7499@gmail.com',
           to:'duchala.com@gmail.com',
           subject:'Product Order',
-          text:{
-            "items":req.body.orderItems,
-            "price":req.body.totalPrice
-          }
+          text:'product order '
         }
 
         transporter.sendMail(mailOption,(err,info)=>{
             if(err){
               console.log(err)
             }else{
-              console.log('Email sent')
+              console.log('Email sent',info.response)
             }
         })
 
