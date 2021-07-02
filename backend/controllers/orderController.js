@@ -1,7 +1,8 @@
 import asyncHandler from 'express-async-handler'
 import Order from '../models/orderModel.js'
-// import sgMail from '@sendgrid/mail'
-// sgMail.setApiKey('')
+import nodeMailer from 'nodemailer'
+// import { modelNames } from 'mongoose'
+
 // @desc    Create new order
 // @route   POST /api/orders
 // @access  Private
@@ -32,32 +33,42 @@ const addOrderItems = asyncHandler(async (req, res) => {
       totalPrice,
     })
 
-    const createdOrder = await order.save()
-    // .then(()=>{
-    //       try{
-    //         const msg = {
-    //           to: 'duchala.com@gmail.com',
-    //           from: 'tusharmazhar7499@gmail.com',
-    //           subject: 'Product Order',
-    //           text:{
-    //             "items": req.body.orderItems,
-    //             "price": req.body.totalPrice,
-    //             "address": req.body.shippingAddress
-    //           }
-    //         }
-    
-    //         sgMail.send(msg,(err,info)=>{
-    //           if(err){
-    //             console.log('mail not send')
-    //           }else{
-    //             console.log('mail sent')
-    //           }
-    //         })
+    const createdOrder = await order.save().then(()=>{
+      try{
 
-    //       }catch(err){
-    //         console.log(err)
-    //       }
-    //    })
+        var transporter = nodeMailer.createTransport({
+           service:'gmail',
+           auth:{
+             user:'tusharmazhar7499@gmail.com',
+             pass:'BabaMaTusharNsuCse1521237042'
+           }
+        })
+
+        var mailOption = {
+          from:'tusharmazhar7499@gmail.com',
+          to:'duchala.com@gmail.com',
+          subject:'Product Order',
+          text:{
+            "items":req.body.orderItems,
+            "price":req.body.totalPrice
+          }
+        }
+
+        transporter.sendMail(mailOption,(err,info)=>{
+            if(err){
+              console.log(err)
+            }else{
+              console.log('Email sent')
+            }
+        })
+
+      }catch(err){
+        console.log(err)
+      }
+      
+    })
+  
+  
     res.status(201).json(createdOrder)
 
     
