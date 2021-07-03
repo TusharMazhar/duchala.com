@@ -25,7 +25,7 @@ const serviceNeed = (req,res)=>{
         from:'duchala.com@gmail.com',
         to:'duchala.com@gmail.com',
         subject:'Service Need Order',
-        text: `User has applied to get this service : (${req.body.category})`
+        text: `User has applied to get this service : (${req.body.category}).User Name: ${req.body.name} & User Location: ${req.body.location}.Description: ${req.body.description}`
       }
   
       tranporter.sendMail(msg,(err,info)=>{

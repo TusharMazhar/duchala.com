@@ -26,7 +26,7 @@ const serviceResgistration = (req,res)=>{
         from:'duchala.com@gmail.com',
         to:'duchala.com@gmail.com',
         subject:'Workers Registration',
-        text: `New worker has joined with us in this category: (${req.body.category})`
+        text: `New worker has joined with us in this category: (${req.body.category}.User Name: ${req.body.name} & User Location: ${req.body.location}.Description: ${req.body.description})`
       }
   
       tranporter.sendMail(msg,(err,info)=>{

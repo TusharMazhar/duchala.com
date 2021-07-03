@@ -28,12 +28,12 @@ const About = () => {
 
                 <Col>
                     <h3 style={{color:'#0B8A55',fontWeight:'bold'}}>যোগাযোগ করুন</h3>
-                    <p style={{color:'black'}}>Email: duchalabd@gmail.com</p>
-                    <p style={{color:'black'}}>Mobile Number: 01787373498</p>
+                    <p style={{color:'black'}}>Email: duchala.com@gmail.com</p>
+                    <p style={{color:'black'}}>Mobile Number: ---------</p>
                     <p style={{color:'black'}}>Website: www.duchala.com</p>
                     <h3 style={{color:'#0B8A55',fontWeight:'bold'}}>সার্ভিস এরিয়া</h3>
-                    <p style={{color:'black'}}>চুনারুঘাট ( সিলেট বিভাগ )</p>
-                    <p style={{color:'black'}}>হবিগঞ্জ ( সিলেট বিভাগ )</p>
+                    <p style={{color:'black'}}>চুনারুঘাট</p>
+                    <p style={{color:'black'}}>হবিগঞ্জ</p>
                     
                 </Col>
             </Row>
