@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler'
 import Order from '../models/orderModel.js'
+import nodeMailer from 'nodemailer'
 // @desc    Create new order
 // @route   POST /api/orders
 // @access  Private
@@ -33,7 +34,34 @@ const addOrderItems = asyncHandler(async (req, res) => {
     const createdOrder = await order.save()
     res.status(201).json(createdOrder)
 
-    
+    try{
+      var tranporter = nodeMailer.createTransport({
+        service:'gmail',
+        auth:{
+          user:'duchala.com@gmail.com',
+          pass:'192837465DuchalaCom'
+        }
+    })
+
+    var msg = {
+      from:'duchala.com@gmail.com',
+      to:'duchala.com@gmail.com',
+      subject:'Product order',
+      text: `User purchased the products of ${totalPrice} Taka`
+    }
+
+    tranporter.sendMail(msg,(err,info)=>{
+      if(err){
+        console.log('Error occured',err)
+      }else{
+        console.log('success')
+      }
+    })
+  }catch(err){
+      console.log(err)
+  }
+
+     
   }
 })
 
