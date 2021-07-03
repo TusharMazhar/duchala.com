@@ -89,7 +89,6 @@ const ProfileScreen = ({  history }) => {
                     copyText.select();
                     copyText.setSelectionRange(0, 99999); 
                     document.execCommand("copy");
-                    alert("রেফার আইডি কপি হয়েছে,আপনি এখন আইডিটি যে কাউকে শেয়ার করতে পারেন: " + copyText.value);
                 }}>Copy</button>
               </div>
             </Form.Group>
