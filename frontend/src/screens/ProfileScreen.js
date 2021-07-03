@@ -33,7 +33,6 @@ const ProfileScreen = ({  history }) => {
 
   const orderListMy = useSelector((state) => state.orderListMy)
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
-
   useEffect(() => {
     if (!userInfo) {
       history.push('/login')
@@ -77,15 +76,24 @@ const ProfileScreen = ({  history }) => {
             {referActive?(
               <Form.Group controlId='referId'>
               <Form.Label style={{color:'red',fontWeight:'bold'}}>Refer Id:</Form.Label>
-              <Form.Control
-                style={{backgroundColor:'red',fontWeight:'bold',color:'white'}}
-                type="referId"
-                value={referId}
-                readOnly
-              ></Form.Control>
+              <div style={{display:'flex'}}>
+                  <input
+                    style={{backgroundColor:'red',fontWeight:'bold',color:'white'}}
+                    type="referId"
+                    value={referId}
+                    readOnly
+                    id="myInput"
+                  ></input>
+                  <button onClick={()=>{
+                    var copyText = document.getElementById("myInput")
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999); 
+                    document.execCommand("copy");
+                    alert("রেফার আইডি কপি হয়েছে,আপনি এখন আইডিটি যে কাউকে শেয়ার করতে পারেন: " + copyText.value);
+                }}>Copy</button>
+              </div>
             </Form.Group>
             ) : ''}
-
             {referActive?(
               <Form.Group controlId='referBonus'>
               <Form.Label style={{color:'#0B8A55',fontWeight:'bold'}}>Refer Bonus Taka:</Form.Label>
