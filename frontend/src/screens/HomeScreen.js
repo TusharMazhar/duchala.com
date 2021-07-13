@@ -193,7 +193,13 @@ const HomeScreen = ({ match,history }) => {
           <Col className="category" onClick={()=>handleCategory('girls')}>মেয়েদের পণ্য</Col>
         </Row>
         <Row>
-            <p style={{margin:'auto',paddingTop:'10px',color:'#0B8A55'}}>সর্বমোট পণ্য আছে: {products.length} টি</p>
+          {
+            products.length===0?(
+              <span></span>
+            ):(
+              <p style={{margin:'auto',paddingTop:'10px',color:'#0B8A55'}}>সর্বমোট পণ্য আছে: {products.length} টি</p>
+            )
+          }
         </Row>
       
       </div>
