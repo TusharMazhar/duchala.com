@@ -28,11 +28,6 @@ const HomeScreen = ({ match,history }) => {
     dispatch(listProducts(keyword, pageNumber))
   }, [dispatch, keyword, pageNumber])
 
-  // useEffect(() => {
-  //   if(category!==''){
-  //     history.push(`/search/${category}`)
-  //   }
-  // }, [category,history])
   useEffect(()=>{
     const filterProducts = products.filter(item=>{
       return item.category===category
@@ -189,13 +184,16 @@ const HomeScreen = ({ match,history }) => {
       
       
   
-      <div style={{paddingLeft:"15px",paddingRight:"15px",textAlign:'center',marginBottom:'10px',cursor:'pointer'}}>
+      <div style={{paddingLeft:"15px",paddingRight:"15px",textAlign:'center',cursor:'pointer'}}>
         <Row>
           <Col className="category" onClick={()=>handleCategory('vegetables')}>সবজি</Col>
           <Col className="category" onClick={()=>handleCategory('fish')}>মাছ</Col>
           <Col className="category" onClick={()=>handleCategory('meat')}>মাংস</Col>
           <Col className="category" onClick={()=>handleCategory('grocery')}>মুদি পণ্য</Col>
           <Col className="category" onClick={()=>handleCategory('girls')}>মেয়েদের পণ্য</Col>
+        </Row>
+        <Row>
+            <p style={{margin:'auto',paddingTop:'10px',color:'#0B8A55'}}>সর্বমোট পণ্য আছে: {products.length} টি</p>
         </Row>
       
       </div>
@@ -221,7 +219,6 @@ const HomeScreen = ({ match,history }) => {
               
               <Col key={product._id} xs={12} sm={6} md={6} lg={4} xl={3}>
                 <Product product={product} />
-                <p>{products.length}</p>
               </Col>
             ))}
             {
