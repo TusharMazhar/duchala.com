@@ -97,6 +97,7 @@ const App = () => {
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} exact />
           <Route path='/admin/orderlist' component={OrderListScreen} exact />
           <Route path='/search/:keyword' component={HomeScreen} exact />
+          <Route path='/category/:keyword' component={HomeScreen} exact />
           <Route path='/page/:pageNumber' component={HomeScreen} exact />
           <Route
             path='/search/:keyword/page/:pageNumber'

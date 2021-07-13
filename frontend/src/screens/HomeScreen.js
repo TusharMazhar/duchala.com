@@ -22,17 +22,26 @@ const HomeScreen = ({ match,history }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products, page, pages } = productList
+  let { loading, error, products, page, pages } = productList
 
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
   }, [dispatch, keyword, pageNumber])
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   if(category!==''){
+  //     history.push(`/search/${category}`)
+  //   }
+  // }, [category,history])
+  useEffect(()=>{
+    const filterProducts = products.filter(item=>{
+      return item.category===category
+    })
+    products = filterProducts
     if(category!==''){
-      history.push(`/search/${category}`)
+      history.push(`/category/${category}`)
     }
-  }, [category,history])
+  },[category,history])
 
   const handleCategory=(name)=>{
     setCategory(name)
@@ -212,6 +221,7 @@ const HomeScreen = ({ match,history }) => {
               
               <Col key={product._id} xs={12} sm={6} md={6} lg={4} xl={3}>
                 <Product product={product} />
+                <p>{products.length}</p>
               </Col>
             ))}
             {
