@@ -1,7 +1,7 @@
 import React, { useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card,Button} from 'react-bootstrap'
+import { Row, Col, Card,Button, Modal} from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -14,6 +14,10 @@ import "./Box.css"
 
 
 const HomeScreen = ({ match,history }) => {
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+
   const [category, setCategory] = useState('')
   const keyword = match.params.keyword
 
@@ -44,6 +48,19 @@ const HomeScreen = ({ match,history }) => {
 
   return (
     <div style={{marginBottom:'30px'}}> 
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title style={{color:'#0B8A55'}}>অর্ডার করার পুর্বে জেনে নিন</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{color:'red'}}>
+          <p style={{color:'#0B8A55'}}>আমরা শুধুমাত্র <span style={{color:'red'}}>হবিগঞ্জ</span> এবং <span style={{color:'red'}}>চুনারুঘাট</span> এরিয়াতে পণ্য ডেলিভারি এবং সার্ভিস দিয়ে থাকি।</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button style={{backgroundColor:'#0B8A55',color:'white'}} onClick={handleClose}>
+             ঠিক আছে
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div style={{backgroundImage: "url(" + InnerBgImg +")",width:"auto"}}>
         <div style={{textAlign:'center'}}>
           <h5 style={{color:'white',fontWeight:'bold',paddingTop:'30px'}}>আমাদের সেবাসমূহ</h5>
