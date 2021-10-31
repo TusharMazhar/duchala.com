@@ -1,4 +1,4 @@
- let statusCode = {
+ let response = {
 
     ok:200,
     created:201,
