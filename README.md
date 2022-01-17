@@ -1,4 +1,4 @@
-website: www.duchala.com
+website: https://duchala.herokuapp.com/
 
 Install Dependencies (frontend & backend)
 
