@@ -152,8 +152,7 @@ const PlaceOrderScreen =  ({ history }) => {
           <Modal.Title style={{color:'#0B8A55'}}>অর্ডার করার পুর্বে জেনে নিন</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{color:'red'}}>
-          আপনি যেদিন অর্ডার করবেন, আমরা সেই পণ্যগুলো পরের দিন সকাল(৭টা থেকে - ১১টার মধ্যে) আপনার বাসাই একদম ফ্রেশ/সতেজ মাছ,মাংস,শাক-সবজি,মুদি পণ্য বা অন্যান্য পণ্যগুলো পৌছে দিব। তাই,আপনাদের প্রয়োজনীয় পণ্যগুলো একদিন আগে অর্ডার করুন,যাতে আমরা আপনাদেরকে ফ্রেশ/সতেজ পণ্য বাসায় পৌছে দিতে পারি।
-          <p style={{color:'#0B8A55'}}>আমরা বাজার থেকে কম মূল্যে এবং ১০০% ফ্রেশ পণ্য আপনাদের বাসাই পৌছে দেওয়ার অঙ্গীকার করছি।</p>
+          <p style={{color:'#0B8A55'}}>আমরা শুধুমাত্র <span style={{color:'red'}}>হবিগঞ্জ</span> এবং <span style={{color:'red'}}>চুনারুঘাট</span> এরিয়াতে পণ্য ডেলিভারি দিয়ে থাকি।</p>
         </Modal.Body>
         <Modal.Footer>
           <Link className='btn btn-light my-3' style={{backgroundColor:'#0B8A55',color:'white'}} to='/'>
