@@ -37,7 +37,7 @@ const RegisterScreen = ({ location, history }) => {
       const admin = true
       const referId = name.substr(0,6) + Math.floor(Math.random() * 10000000)
       const spaceRemoveReferId = referId.replace(/\s/g, "")
-      if(email.toString()==='01787373498' || email.toString()==='01746730986' ){
+      if(email.toString()==='01787373498'){
         dispatch(register(name, email, password,admin,spaceRemoveReferId,referActive))
       }else{
         
